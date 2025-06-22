@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrustVolt Electric | Power You Can Trust</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0a4da2',
+                        secondary: '#ffc107',
+                        accent: '#e63946',
+                        dark: '#1e293b',
+                        light: '#f8fafc'
+                    },
+                    fontFamily: {
+                        heading: ['Montserrat', 'sans-serif'],
+                        body: ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-bg {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1504813184591-01572f98c85f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1771&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .testimonial-card {
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: scale(1.03);
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+        
+        .map-container {
+            height: 400px;
+            border-radius: 1rem;
+            overflow: hidden;
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(10, 77, 162, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(10, 77, 162, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(10, 77, 162, 0); }
+        }
+    </style>
+</head>
+<body class="font-body text-dark bg-light">
+    <!-- Header/Navigation -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="container mx-auto px-4">
+            <nav class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <div class="bg-primary text-white p-2 rounded-lg mr-3">
+                        <i class="fa-solid fa-bolt text-2xl"></i>
+                    </div>
+                    <a href="#" class="text-2xl font-bold font-heading text-primary">TrustVolt<span class="text-secondary">Electric</span></a>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="font-medium hover:text-primary">Home</a>
+                    <a href="#about" class="font-medium hover:text-primary">About</a>
+                    <a href="#services" class="font-medium hover:text-primary">Services</a>
+                    <a href="#why-us" class="font-medium hover:text-primary">Why Us</a>
+                    <a href="#contact" class="font-medium hover:text-primary">Contact</a>
+                    <a href="#booking" class="bg-primary text-white px-6 py-2 rounded-full font-medium hover:bg-opacity-90 transition">Book Now</a>
+                </div>
+                
+                <div class="md:hidden">
+                    <button id="menu-toggle" class="text-primary text-2xl">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </nav>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden py-4">
+                <a href="#home" class="block py-2 px-4 hover:bg-gray-100">Home</a>
+                <a href="#about" class="block py-2 px-4 hover:bg-gray-100">About</a>
+                <a href="#services" class="block py-2 px-4 hover:bg-gray-100">Services</a>
+                <a href="#why-us" class="block py-2 px-4 hover:bg-gray-100">Why Us</a>
+                <a href="#contact" class="block py-2 px-4 hover:bg-gray-100">Contact</a>
+                <a href="#booking" class="block bg-primary text-white text-center py-2 px-4 rounded-full mt-2">Book Now</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg text-white py-20 md:py-32">
+        <div class="container mx-auto px-4 text-center">
+            <div class="max-w-3xl mx-auto">
+                <h1 class="text-4xl md:text-6xl font-bold font-heading mb-6">Reliable Electricians – Day or Night</h1>
+                <p class="text-xl mb-10">Commercial & residential repairs, installations, & emergency services across the UK.</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#booking" class="bg-secondary text-dark font-bold px-8 py-4 rounded-full text-lg hover:bg-opacity-90 transition transform hover:scale-105">Book a Repair</a>
+                    <a href="#contact" class="bg-transparent border-2 border-white text-white font-bold px-8 py-4 rounded-full text-lg hover:bg-white hover:text-dark transition">Request a Quote</a>
+                </div>
+            </div>
+            <div class="mt-20 flex justify-center">
+                <div class="bg-white text-primary p-6 rounded-2xl shadow-xl max-w-2xl">
+                    <p class="text-xl font-medium"><i class="fas fa-quote-left text-secondary mr-2"></i>Electrical Excellence, Delivered<i class="fas fa-quote-right text-secondary ml-2"></i></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold font-heading mb-4">About TrustVolt Electric</h2>
+                <div class="w-24 h-1 bg-secondary mx-auto"></div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-center gap-10">
+                <div class="md:w-1/2 relative">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1581091226033-d5c4932501d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Electrician" class="rounded-2xl shadow-lg">
+                        <div class="absolute -bottom-6 -right-6 bg-primary text-white p-6 rounded-2xl shadow-xl">
+                            <p class="text-2xl font-bold">25+ Years</p>
+                            <p class="text-sm">Of Experience</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl font-bold font-heading mb-4">Our Story</h3>
+                    <p class="text-lg mb-6">After 25 years serving local homeowners and businesses, John Wilson started TrustVolt Electric to deliver honest service and top-quality work in every home.</p>
+                    <p class="mb-6">Founded on decades of family experience, our founder brings a strong work ethic and trusted expertise to every job. We're proud of our UK roots and commitment to reliability and safety.</p>
+                    
+                    <div class="grid grid-cols-2 gap-4 mb-8">
+                        <div class="flex items-center">
+                            <div class="bg-primary text-white p-3 rounded-full mr-3">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <span>NICEIC Registered</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-primary text-white p-3 rounded-full mr-3">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <span>City & Guilds Certified</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-primary text-white p-3 rounded-full mr-3">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <span>Fully Insured</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-primary text-white p-3 rounded-full mr-3">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <span>Gas Safe Certified</span>
+                        </div>
+                    </div>
+                    
+                    <a href="#contact" class="inline-block bg-primary text-white px-6 py-3 rounded-full font-medium hover:bg-opacity-90 transition">Learn More About Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold font-heading mb-4">Our Services</h2>
+                <p class="text-lg max-w-2xl mx-auto">Comprehensive electrical solutions for residential and commercial clients across the UK</p>
+                <div class="w-24 h-1 bg-secondary mx-auto mt-4"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div class="service-card bg-white rounded-2xl shadow-lg p-8 transition-all duration-300">
+                    <div class="text-primary text-4xl mb-6">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Residential Repairs & Installations</h3>
+                    <p class="mb-4">Fault finding, rewiring, lighting, outlets, and all home electrical needs.</p>
+                    <ul class="mb-6">
+                        <li class="flex items-center mb-2"><i class="fas fa-check-circle text-secondary mr-2"></i> Lighting installations</li>
+                        <li class="flex items-center mb-2"><i class="fas fa-check-circle text-secondary mr-2"></i> Outlet repairs</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-2"></i> Complete rewiring</li>
+                    </ul>
+                    <a href="#booking" class="text-primary font-medium hover:underline">Book Service →</a>
+                </div>
+                
+                <!-- Service Card 2 -->
+                <div class="service-card bg-white rounded-2xl shadow-lg p-8 transition-all duration-300">
+                    <div class="text-primary text-4xl mb-6">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Commercial Electrical Work</h3>
+                    <p class="mb-4">Office fit-outs, wiring, maintenance, and commercial electrical solutions.</p>
+                    <ul class="mb-6">
+                        <li class="flex items-center mb-2"><i class="fas fa-check-circle text-secondary mr-2"></i> Office fit-outs</li>
+                        <li class="flex items-center mb-2"><i class="fas fa-check-circle text-secondary mr-2"></i> Wiring installations</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-2"></i> Maintenance contracts</li>
+                    </ul>
+                    <a href="#booking" class="text-primary font-medium hover:underline">Book Service →</a>
+                </div>
+                
+                <!-- Service Card 3 -->
+                <div class="service-card bg-white rounded-2xl shadow-lg p-8 transition-all duration-300">
+                    <div class="text-primary text-4xl mb-6">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Safety Inspections & Testing</h3>
+                    <p class="mb-4">Full electrical safety checks for compliance and peace of mind.</p>
+                    <ul class="mb-6">
+                        <li class="flex items-center mb-2"><i class="fas fa-check-circle text-secondary mr-2"></i> PAT Testing</li>
+                        <li class="flex items-center mb-2"><i class="fas fa-check-circle text-secondary mr-2"></i> EICR Certificates</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-2"></i> Fire alarm testing</li>
+                    </ul>
+                    <a href="#booking" class="text-primary font-medium hover:underline">Book Service →</a>
+                </div>
+                
+                <!-- Service Card 4 -->
+                <div class="service-card bg-white rounded-2xl shadow-lg p-8 transition-all duration-300">
+                    <div class="text-primary text-4xl mb-6">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Emergency Services</h3>
+                    <p class="mb-4">24/7 call-out for urgent electrical issues, day or night.</p>
+                    <ul class="mb-6">
+                        <li class="flex items-center mb-2"><i class="fas fa-check-circle text-secondary mr-2"></i> Power outages</li>
+                        <li class="flex items-center mb-2"><i class="fas fa-check-circle text-secondary mr-2"></i> Faulty wiring</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-2"></i> Electrical hazards</li>
+                    </ul>
+                    <a href="tel:+441234567890" class="text-primary font-medium hover:underline">Call Now →</a>
+                </div>
+                
+                <!-- Service Card 5 -->
+                <div class="service-card bg-white rounded-2xl shadow-lg p-8 transition-all duration-300">
+                    <div class="text-primary text-4xl mb-6">
+                        <i class="fas fa-charging-station"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Smart Home & EV Chargers</h3>
+                    <p class="mb-4">Smart lighting, thermostats, and EV charging station installations.</p>
+                    <ul class="mb-6">
+                        <li class="flex items-center mb-2"><i class="fas fa-check-circle text-secondary mr-2"></i> EV charger installation</li>
+                        <li class="flex items-center mb-2"><i class="fas fa-check-circle text-secondary mr-2"></i> Smart home systems</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-2"></i> Home automation</li>
+                    </ul>
+                    <a href="#booking" class="text-primary font-medium hover:underline">Book Service →</a>
+                </div>
+                
+                <!-- Service Card 6 -->
+                <div class="service-card bg-white rounded-2xl shadow-lg p-8 transition-all duration-300">
+                    <div class="text-primary text-4xl mb-6">
+                        <i class="fas fa-solar-panel"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Renewable Energy Solutions</h3>
+                    <p class="mb-4">Solar panel installations and sustainable energy systems.</p>
+                    <ul class="mb-6">
+                        <li class="flex items-center mb-2"><i class="fas fa-check-circle text-secondary mr-2"></i> Solar panel installation</li>
+                        <li class="flex items-center mb-2"><i class="fas fa-check-circle text-secondary mr-2"></i> Battery storage</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-2"></i> Energy monitoring</li>
+                    </ul>
+                    <a href="#booking" class="text-primary font-medium hover:underline">Book Service →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="why-us" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold font-heading mb-4">Why Choose TrustVolt?</h2>
+                <div class="w-24 h-1 bg-secondary mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Value 1 -->
+                        <div class="bg-gray-50 p-6 rounded-2xl">
+                            <div class="text-primary text-3xl mb-4">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2">Trust & Transparency</h3>
+                            <p>We provide honest quotes and clear communication. We stand by our work with a 100% satisfaction guarantee.</p>
+                        </div>
+                        
+                        <!-- Value 2 -->
+                        <div class="bg-gray-50 p-6 rounded-2xl">
+                            <div class="text-primary text-3xl mb-4">
+                                <i class="fas fa-tools"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2">Skilled Craftsmanship</h3>
+                            <p>Every technician is fully qualified and up-to-date with the latest standards and regulations.</p>
+                        </div>
+                        
+                        <!-- Value 3 -->
+                        <div class="bg-gray-50 p-6 rounded-2xl">
+                            <div class="text-primary text-3xl mb-4">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2">Prompt, Reliable Service</h3>
+                            <p>We respect your time and arrive on schedule, 24/7 if needed. No more waiting around!</p>
+                        </div>
+                        
+                        <!-- Value 4 -->
+                        <div class="bg-gray-50 p-6 rounded-2xl">
+                            <div class="text-primary text-3xl mb-4">
+                                <i class="fas fa-smile"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2">Customer Satisfaction</h3>
+                            <p>We back our work with a guarantee; your peace of mind is our priority.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="bg-primary text-white rounded-2xl p-8 shadow-xl">
+                        <h3 class="text-2xl font-bold mb-6">What Our Customers Say</h3>
+                        
+                        <!-- Testimonial 1 -->
+                        <div class="testimonial-card bg-white text-dark rounded-2xl p-6 mb-6">
+                            <div class="flex items-center mb-4">
+                                <div class="text-secondary text-2xl mr-3">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <p class="font-bold">Jane D., Leeds</p>
+                            </div>
+                            <p class="italic">"To keep your family safe and warm, I wouldn't trust anyone else! TrustVolt fixed our electrical issues quickly and professionally."</p>
+                        </div>
+                        
+                        <!-- Testimonial 2 -->
+                        <div class="testimonial-card bg-white text-dark rounded-2xl p-6 mb-6">
+                            <div class="flex items-center mb-4">
+                                <div class="text-secondary text-2xl mr-3">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <p class="font-bold">Mohammed S., Birmingham</p>
+                            </div>
+                            <p class="italic">"They fixed our shop lights fast and at a fair price. Friendly and professional service from start to finish."</p>
+                        </div>
+                        
+                        <!-- Testimonial 3 -->
+                        <div class="testimonial-card bg-white text-dark rounded-2xl p-6">
+                            <div class="flex items-center mb-4">
+                                <div class="text-secondary text-2xl mr-3">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <p class="font-bold">Claire T., Cardiff</p>
+                            </div>
+                            <p class="italic">"TrustVolt installed an EV charger for us and did a fantastic job. Clean, efficient work and highly recommended."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Certifications -->
+            <div class="mt-20">
+                <h3 class="text-2xl font-bold text-center mb-10">Our Certifications & Guarantees</h3>
+                <div class="flex flex-wrap justify-center gap-8">
+                    <div class="bg-white p-4 rounded-xl shadow-md flex flex-col items-center">
+                        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/0/0a/NICEIC.svg/1200px-NICEIC.svg.png" alt="NICEIC" class="h-16 mb-2">
+                        <p class="font-bold">NICEIC Registered</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-xl shadow-md flex flex-col items-center">
+                        <img src="https://www.trustmark.org.uk/wp-content/themes/trustmark/assets/images/trustmark-logo.svg" alt="Trustmark" class="h-16 mb-2">
+                        <p class="font-bold">Trustmark Approved</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-xl shadow-md flex flex-col items-center">
+                        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/5/5c/City_%26_Guilds_Group_logo.svg/1200px-City_%26_Guilds_Group_logo.svg.png" alt="City & Guilds" class="h-16 mb-2">
+                        <p class="font-bold">City & Guilds Qualified</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-xl shadow-md flex flex-col items-center">
+                        <div class="bg-primary text-white p-3 rounded-full mb-2">
+                            <i class="fas fa-shield-alt text-3xl"></i>
+                        </div>
+                        <p class="font-bold">12-Month Guarantee</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-xl shadow-md flex flex-col items-center">
+                        <div class="bg-primary text-white p-3 rounded-full mb-2">
+                            <i class="fas fa-umbrella text-3xl"></i>
+                        </div>
+                        <p class="font-bold">Fully Insured</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Area Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold font-heading mb-4">Our Service Area</h2>
+                <p class="text-lg">Serving Homeowners & Businesses Across the UK</p>
+                <div class="w-24 h-1 bg-secondary mx-auto mt-4"></div>
+            </div>
+            
+            <div class="bg-white rounded-2xl shadow-lg p-8 mb-12">
+                <div class="map-container" id="map">
+                    <!-- Map placeholder -->
+                    <div class="w-full h-full bg-gray-200 rounded-lg flex items-center justify-center">
+                        <div class="text-center">
+                            <i class="fas fa-map-marked-alt text-5xl text-primary mb-4"></i>
+                            <p class="text-xl font-bold">UK Service Coverage</p>
+                            <p class="text-gray-600">We serve all major cities and regions across the United Kingdom</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <h3 class="text-2xl font-bold mb-6">We Cover All Major UK Cities</h3>
+                <div class="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
+                    <span class="bg-white px-6 py-3 rounded-full shadow-sm font-medium">London</span>
+                    <span class="bg-white px-6 py-3 rounded-full shadow-sm font-medium">Birmingham</span>
+                    <span class="bg-white px-6 py-3 rounded-full shadow-sm font-medium">Manchester</span>
+                    <span class="bg-white px-6 py-3 rounded-full shadow-sm font-medium">Liverpool</span>
+                    <span class="bg-white px-6 py-3 rounded-full shadow-sm font-medium">Leeds</span>
+                    <span class="bg-white px-6 py-3 rounded-full shadow-sm font-medium">Glasgow</span>
+                    <span class="bg-white px-6 py-3 rounded-full shadow-sm font-medium">Edinburgh</span>
+                    <span class="bg-white px-6 py-3 rounded-full shadow-sm font-medium">Cardiff</span>
+                    <span class="bg-white px-6 py-3 rounded-full shadow-sm font-medium">Belfast</span>
+                    <span class="bg-white px-6 py-3 rounded-full shadow-sm font-medium">Bristol</span>
+                </div>
+                <p class="mt-8 text-xl font-medium">Whether you're in London or Glasgow, TrustVolt Electric is ready to power your project.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking & Contact Section -->
+    <section id="booking" class="py-20 bg-primary text-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold font-heading mb-4">Book Your Service</h2>
+                <p class="text-lg max-w-2xl mx-auto">Need Help Fast? Book Online Now or Contact Us Directly</p>
+                <div class="w-24 h-1 bg-secondary mx-auto mt-4"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div>
+                    <div class="bg-white text-dark rounded-2xl shadow-xl p-8">
+                        <h3 class="text-2xl font-bold mb-6">Request a Quote</h3>
+                        <form>
+                            <div class="mb-6">
+                                <label class="block mb-2 font-medium">Full Name</label>
+                                <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                            </div>
+                            <div class="mb-6">
+                                <label class="block mb-2 font-medium">Email Address</label>
+                                <input type="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                            </div>
+                            <div class="mb-6">
+                                <label class="block mb-2 font-medium">Phone Number</label>
+                                <input type="tel" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                            </div>
+                            <div class="mb-6">
+                                <label class="block mb-2 font-medium">Service Needed</label>
+                                <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                                    <option>Select a service</option>
+                                    <option>Residential Repairs</option>
+                                    <option>Commercial Installation</option>
+                                    <option>Safety Inspection</option>
+                                    <option>Emergency Service</option>
+                                    <option>EV Charger Installation</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                            <div class="mb-6">
+                                <label class="block mb-2 font-medium">Message</label>
+                                <textarea rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-primary text-white py-4 rounded-lg font-bold hover:bg-opacity-90 transition">Submit Request</button>
+                        </form>
+                    </div>
+                </div>
+                
+                <div id="contact">
+                    <div class="mb-12">
+                        <h3 class="text-2xl font-bold mb-6">Contact Information</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="text-secondary text-2xl mr-4 mt-1">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg">Phone</h4>
+                                    <p class="text-xl">+44 123 456 7890</p>
+                                    <p class="text-gray-300">24/7 Emergency Line Available</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="text-secondary text-2xl mr-4 mt-1">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg">Email</h4>
+                                    <p class="text-xl">info@trustvoltelectric.co.uk</p>
+                                    <p class="text-gray-300">Response within 1 business day</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="text-secondary text-2xl mr-4 mt-1">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg">Head Office</h4>
+                                    <p class="text-xl">123 Power Street, London, EC1A 1AA</p>
+                                    <p class="text-gray-300">By appointment only</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-2xl font-bold mb-6">Business Hours</h3>
+                        <div class="bg-white bg-opacity-10 rounded-xl p-6">
+                            <div class="flex justify-between py-3 border-b border-white border-opacity-20">
+                                <span>Monday - Friday</span>
+                                <span class="font-bold">8:00 AM - 6:00 PM</span>
+                            </div>
+                            <div class="flex justify-between py-3 border-b border-white border-opacity-20">
+                                <span>Saturday</span>
+                                <span class="font-bold">9:00 AM - 4:00 PM</span>
+                            </div>
+                            <div class="flex justify-between py-3">
+                                <span>Sunday & Holidays</span>
+                                <span class="font-bold">Emergency Only</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-12">
+                        <h3 class="text-2xl font-bold mb-6">Follow Us</h3>
+                        <div class="flex space-x-4">
+                            <a href="#" class="bg-white text-primary w-12 h-12 rounded-full flex items-center justify-center hover:bg-secondary transition">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="bg-white text-primary w-12 h-12 rounded-full flex items-center justify-center hover:bg-secondary transition">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="bg-white text-primary w-12 h-12 rounded-full flex items-center justify-center hover:bg-secondary transition">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="bg-white text-primary w-12 h-12 rounded-full flex items-center justify-center hover:bg-secondary transition">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-6">
+                        <div class="bg-primary text-white p-2 rounded-lg mr-3">
+                            <i class="fa-solid fa-bolt text-2xl"></i>
+                        </div>
+                        <a href="#" class="text-2xl font-bold font-heading text-white">TrustVolt<span class="text-secondary">Electric</span></a>
+                    </div>
+                    <p class="mb-6 text-gray-400">Providing reliable electrical services across the UK with a commitment to safety, quality, and customer satisfaction.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#home" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white">Services</a></li>
+                        <li><a href="#why-us" class="text-gray-400 hover:text-white">Why Choose Us</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white">Contact</a></li>
+                        <li><a href="#booking" class="text-gray-400 hover:text-white">Book Online</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Services</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Residential Repairs</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Commercial Installation</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Safety Inspections</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Emergency Services</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">EV Charger Installation</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Smart Home Solutions</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Contact Us</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-secondary mt-1 mr-3"></i>
+                            <span class="text-gray-400">123 Power Street, London, EC1A 1AA</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-phone text-secondary mt-1 mr-3"></i>
+                            <span class="text-gray-400">+44 123 456 7890</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope text-secondary mt-1 mr-3"></i>
+                            <span class="text-gray-400">info@trustvoltelectric.co.uk</span>
+                        </li>
+                    </ul>
+                    <div class="mt-6">
+                        <a href="#booking" class="inline-block bg-secondary text-dark font-bold px-6 py-3 rounded-full hover:bg-opacity-90 transition">Emergency Call</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500">© 2025 TrustVolt Electric. All rights reserved.</p>
+                <div class="mt-4 md:mt-0">
+                    <a href="#" class="text-gray-500 hover:text-white mr-4">Privacy Policy</a>
+                    <a href="#" class="text-gray-500 hover:text-white">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Action Button -->
+    <a href="tel:+441234567890" class="fixed bottom-6 right-6 bg-primary text-white w-16 h-16 rounded-full flex items-center justify-center shadow-lg pulse">
+        <i class="fas fa-phone text-2xl"></i>
+    </a>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    document.getElementById('mobile-menu').classList.add('hidden');
+                }
+            });
+        });
+        
+        // Form submission handling
+        const contactForm = document.querySelector('form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for your request! We will contact you shortly.');
+                this.reset();
+            });
+        }
+    </script>
+</body>
+</html>
