@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AquaPro Plumbers | Precision Plumbing. Lasting Peace of Mind.</title>
+    <meta name="description" content="Trusted plumbing experts in the UK offering residential, commercial, and emergency plumbing services with fast response and fair prices.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#006994', // Navy blue
+                        secondary: '#00B4D8', // Aqua blue
+                        accent: '#FF6B6B', // Coral accent
+                        dark: '#1E293B',
+                        light: '#F8FAFC',
+                    },
+                    fontFamily: {
+                        heading: ['Montserrat', 'sans-serif'],
+                        body: ['Poppins', 'sans-serif'],
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s infinite',
+                        'float': 'float 3s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Poppins:wght@400;500;600&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        
+        .hero-overlay {
+            background: rgba(0, 0, 0, 0.4);
+            background: linear-gradient(90deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.3) 100%);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .package-card:hover {
+            transform: scale(1.03);
+        }
+        
+        .testimonial-card {
+            transition: all 0.3s ease;
+        }
+        
+        .sticky-banner {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+        
+        .promo-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 40;
+        }
+        
+        .chat-widget {
+            position: fixed;
+            bottom: 100px;
+            right: 20px;
+            z-index: 30;
+            transform: translateX(120%);
+            transition: transform 0.3s ease;
+        }
+        
+        .chat-widget.active {
+            transform: translateX(0);
+        }
+        
+        .countdown-ribbon {
+            clip-path: polygon(0 0, 100% 0, 95% 100%, 5% 100%);
+        }
+        
+        @media (max-width: 768px) {
+            .hero-content {
+                padding-top: 120px;
+            }
+            
+            .countdown-ribbon {
+                clip-path: none;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-dark">
+    <!-- Sticky Lead Capture Banner -->
+    <div class="sticky-banner bg-primary text-white py-3 px-4 shadow-md">
+        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between">
+            <p class="font-bold mb-2 md:mb-0 text-center md:text-left">Need Help Now? Enter Your Postcode & Phone → Get Instant Quote & Exclusive Deals</p>
+            <div class="flex gap-2 w-full md:w-auto">
+                <input type="text" placeholder="Your Postcode" class="px-3 py-2 rounded text-dark w-full md:w-40">
+                <input type="tel" placeholder="Phone Number" class="px-3 py-2 rounded text-dark w-full md:w-40">
+                <button class="bg-accent hover:bg-opacity-90 text-white font-bold px-4 py-2 rounded whitespace-nowrap">Get Quote</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Countdown Ribbon -->
+    <div class="countdown-ribbon bg-accent text-white text-center py-3 px-4">
+        <div class="container mx-auto">
+            <p class="font-bold">
+                <span class="mr-4">Limited slots for Spring Boiler Service – Book by Midnight!</span>
+                <span id="countdown" class="inline-block font-mono">23:59:59</span>
+            </p>
+        </div>
+    </div>
+    
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md py-4">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <a href="#" class="flex items-center">
+                    <div class="bg-secondary text-white rounded-full w-10 h-10 flex items-center justify-center mr-3">
+                        <i class="fas fa-tint text-xl"></i>
+                    </div>
+                    <span class="text-primary font-heading font-bold text-xl">AquaPro<span class="text-secondary">Plumbers</span></span>
+                </a>
+            </div>
+            
+            <div class="hidden md:flex space-x-8">
+                <a href="#services" class="text-dark hover:text-secondary font-medium">Services</a>
+                <a href="#emergency" class="text-dark hover:text-secondary font-medium">Emergency</a>
+                <a href="#pricing" class="text-dark hover:text-secondary font-medium">Pricing</a>
+                <a href="#about" class="text-dark hover:text-secondary font-medium">About</a>
+                <a href="#contact" class="text-dark hover:text-secondary font-medium">Contact</a>
+            </div>
+            
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-dark hover:text-secondary">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white absolute w-full left-0 px-4 pb-4 shadow-lg z-50">
+            <a href="#services" class="block py-2 text-dark hover:text-secondary">Services</a>
+            <a href="#emergency" class="block py-2 text-dark hover:text-secondary">Emergency</a>
+            <a href="#pricing" class="block py-2 text-dark hover:text-secondary">Pricing</a>
+            <a href="#about" class="block py-2 text-dark hover:text-secondary">About</a>
+            <a href="#contact" class="block py-2 text-dark hover:text-secondary">Contact</a>
+            <div class="mt-4 pt-4 border-t">
+                <a href="tel:+447890123456" class="bg-secondary text-white font-bold px-4 py-2 rounded inline-block">
+                    <i class="fas fa-phone mr-2"></i> Call Now
+                </a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center overflow-hidden">
+        <div class="hero-overlay absolute inset-0 z-10"></div>
+        <video autoplay muted loop class="hero-video">
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-plumber-working-on-a-pipe-15847-large.mp4" type="video/mp4">
+        </video>
+        
+        <div class="container mx-auto px-4 z-20 hero-content">
+            <div class="max-w-2xl text-white">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight">Trusted Plumbing Experts – Fast Response, Fair Prices</h1>
+                <p class="text-xl md:text-2xl mb-8">From drips to disasters, AquaPro Plumbers are on call 24/7</p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <button id="discount-btn" class="bg-accent hover:bg-opacity-90 text-white font-bold px-6 py-3 rounded-lg text-lg animate-pulse-slow">
+                        <i class="fas fa-percentage mr-2"></i> Get 15% Off First Job
+                    </button>
+                    <a href="tel:+447890123456" class="bg-white hover:bg-gray-100 text-primary font-bold px-6 py-3 rounded-lg text-lg text-center">
+                        <i class="fas fa-phone mr-2"></i> Call +44 7890 123456
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Discount Modal -->
+    <div id="discount-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-lg max-w-md w-full p-6 relative">
+            <button id="close-modal" class="absolute top-4 right-4 text-gray-500 hover:text-dark">
+                <i class="fas fa-times"></i>
+            </button>
+            <h3 class="text-2xl font-bold text-primary mb-4">Claim Your 15% Discount</h3>
+            <form class="space-y-4">
+                <div>
+                    <label for="name" class="block text-dark mb-1">Full Name</label>
+                    <input type="text" id="name" class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-secondary">
+                </div>
+                <div>
+                    <label for="phone" class="block text-dark mb-1">Phone Number</label>
+                    <input type="tel" id="phone" class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-secondary">
+                </div>
+                <div>
+                    <label for="postcode" class="block text-dark mb-1">Postcode</label>
+                    <input type="text" id="postcode" class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-secondary">
+                </div>
+                <div>
+                    <label for="service" class="block text-dark mb-1">Service Needed</label>
+                    <select id="service" class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-secondary">
+                        <option value="">Select a service</option>
+                        <option value="emergency">Emergency Plumbing</option>
+                        <option value="boiler">Boiler Service/Repair</option>
+                        <option value="drain">Drain Unblocking</option>
+                        <option value="leak">Leak Detection/Repair</option>
+                        <option value="installation">Installation</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <button type="submit" class="w-full bg-secondary hover:bg-opacity-90 text-white font-bold py-3 rounded-lg">
+                    Claim My Discount <i class="fas fa-arrow-right ml-2"></i>
+                </button>
+            </form>
+            <p class="text-sm text-gray-500 mt-4">*Discount applies to first job only. Minimum £100 spend. Not valid with other offers.</p>
+        </div>
+    </div>
+    
+    <!-- Trust Badges -->
+    <section class="py-8 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16">
+                <div class="flex items-center">
+                    <img src="https://www.gassaferegister.co.uk/assets/images/gas-safe-register-logo.svg" alt="Gas Safe Registered" class="h-12">
+                </div>
+                <div class="flex items-center">
+                    <img src="https://www.ciphe.org.uk/wp-content/uploads/2021/09/ciphe-logo.svg" alt="CIPHE Member" class="h-12">
+                </div>
+                <div class="flex items-center">
+                    <img src="https://www.watersafe.org.uk/wp-content/themes/watersafe/assets/images/logo.svg" alt="WaterSafe Approved" class="h-12">
+                </div>
+                <div class="flex items-center">
+                    <div class="bg-white rounded-lg p-2 shadow">
+                        <div class="flex items-center">
+                            <i class="fas fa-shield-alt text-3xl text-secondary mr-2"></i>
+                            <span class="font-bold">Fully Insured</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Services Section -->
+    <section id="services" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Our Plumbing Services</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Comprehensive plumbing solutions for homes and businesses across the UK</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Residential Plumbing -->
+                <div class="service-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300 hover:shadow-xl">
+                    <div class="h-48 bg-gradient-to-r from-primary to-secondary flex items-center justify-center">
+                        <i class="fas fa-home text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-dark mb-3">Residential Plumbing</h3>
+                        <ul class="space-y-2 text-gray-600 mb-4">
+                            <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-2"></i> Leak detection & repair</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-2"></i> Tap & valve replacements</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-2"></i> Toilet, basin & shower installations</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-2"></i> Pressurized pipe relining</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-2"></i> Burst pipe emergency fixes</li>
+                        </ul>
+                        <button class="w-full bg-primary hover:bg-opacity-90 text-white font-bold py-2 px-4 rounded">
+                            Request Free Quote
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Commercial Plumbing -->
+                <div class="service-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300 hover:shadow-xl">
+                    <div class="h-48 bg-gradient-to-r from-secondary to-accent flex items-center justify-center">
+                        <i class="fas fa-building text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-dark mb-3">Commercial Plumbing</h3>
+                        <ul class="space-y-2 text-gray-600 mb-4">
+                            <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-2"></i> Shop & office plumbing fit-outs</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-2"></i> Boiler room maintenance & repairs</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-2"></i> Backflow prevention & certification</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-2"></i> Water meter installations</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-2"></i> Custom pipework & industrial drainage</li>
+                        </ul>
+                        <button class="w-full bg-primary hover:bg-opacity-90 text-white font-bold py-2 px-4 rounded">
+                            Request Free Quote
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Heating & Boiler Services -->
+                <div class="service-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300 hover:shadow-xl">
+                    <div class="h-48 bg-gradient-to-r from-accent to-primary flex items-center justify-center">
+                        <i class="fas fa-fire text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-dark mb-3">Heating & Boiler Services</h3>
+                        <ul class="space-y-2 text-gray-600 mb-4">
+                            <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-2"></i> Boiler installations & upgrades</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-2"></i> Annual servicing & safety gas checks</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-2"></i> Central heating system flush</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-2"></i> Smart thermostat setup</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-2"></i> Powerflush & radiators balancing</li>
+                        </ul>
+                        <button class="w-full bg-primary hover:bg-opacity-90 text-white font-bold py-2 px-4 rounded">
+                            Request Free Quote
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Drainage & Waste -->
+                <div class="service-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300 hover:shadow-xl">
+                    <div class="h-48 bg-gradient-to-r from-primary to-secondary flex items-center justify-center">
+                        <i class="fas fa-water text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-dark mb-3">Drainage & Waste</h3>
+                        <ul class="space-y-2 text-gray-600 mb-4">
+                            <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-2"></i> Blocked drain clearing & high-pressure jetting</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-2"></i> CCTV drain surveys</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-2"></i> Gully trap maintenance</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-2"></i> Kitchen & bathroom waste repairs</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-2"></i> Sabi systems & grease trap cleaning</li>
+                        </ul>
+                        <button class="w-full bg-primary hover:bg-opacity-90 text-white font-bold py-2 px-4 rounded">
+                            Request Free Quote
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Emergency Plumbing -->
+                <div class="service-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300 hover:shadow-xl">
+                    <div class="h-48 bg-gradient-to-r from-secondary to-accent flex items-center justify-center">
+                        <i class="fas fa-exclamation-triangle text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-dark mb-3">Emergency Plumbing</h3>
+                        <ul class="space-y-2 text-gray-600 mb-4">
+                            <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-2"></i> 24/7 rapid response call-out</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-2"></i> Flood control & water extraction</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-2"></i> Tripping leak shut-off</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-2"></i> Emergency plasterboard & containment</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-2"></i> Temporary pipe bypass solutions</li>
+                        </ul>
+                        <a href="tel:+447890123456" class="block w-full bg-accent hover:bg-opacity-90 text-white font-bold py-2 px-4 rounded text-center">
+                            <i class="fas fa-phone mr-2"></i> Call Emergency
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Green & Smart Solutions -->
+                <div class="service-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300 hover:shadow-xl">
+                    <div class="h-48 bg-gradient-to-r from-accent to-primary flex items-center justify-center">
+                        <i class="fas fa-leaf text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-dark mb-3">Green & Smart Solutions</h3>
+                        <ul class="space-y-2 text-gray-600 mb-4">
+                            <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-2"></i> Rainwater harvesting setups</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-2"></i> Solar thermal & heat-pump integration</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-2"></i> Greywater recycling systems</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-2"></i> Smart leak detectors</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-2"></i> Water usage monitoring</li>
+                        </ul>
+                        <button class="w-full bg-primary hover:bg-opacity-90 text-white font-bold py-2 px-4 rounded">
+                            Request Free Quote
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Emergency Banner -->
+    <section id="emergency" class="py-12 bg-gradient-to-r from-primary to-secondary">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="text-white mb-6 md:mb-0">
+                    <h2 class="text-3xl font-bold mb-2">24/7 Emergency Plumbing Services</h2>
+                    <p class="text-xl">Don't let a plumbing emergency ruin your day. We're here to help, any time.</p>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="tel:+447890123456" class="bg-white hover:bg-gray-100 text-primary font-bold px-6 py-3 rounded-lg text-lg text-center animate-pulse-slow">
+                        <i class="fas fa-phone mr-2"></i> Call Emergency
+                    </a>
+                    <button class="bg-accent hover:bg-opacity-90 text-white font-bold px-6 py-3 rounded-lg text-lg">
+                        <i class="fas fa-envelope mr-2"></i> Send Message
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Why Choose Us -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Why Choose AquaPro Plumbers?</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Experience the difference with our professional plumbing services</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="bg-secondary bg-opacity-10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-clock text-secondary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-2">Fast Response</h3>
+                    <p class="text-gray-600">Average response time under 60 minutes for emergencies. We're there when you need us most.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="bg-secondary bg-opacity-10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-pound-sign text-secondary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-2">Fair Pricing</h3>
+                    <p class="text-gray-600">Upfront pricing with no hidden fees. We provide detailed quotes before any work begins.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="bg-secondary bg-opacity-10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-award text-secondary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-2">Certified Experts</h3>
+                    <p class="text-gray-600">All our plumbers are Gas Safe registered and undergo continuous training on the latest techniques.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="bg-secondary bg-opacity-10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-shield-alt text-secondary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-2">Guaranteed Work</h3>
+                    <p class="text-gray-600">All our work comes with a 12-month guarantee. If there's an issue, we'll fix it at no extra cost.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="bg-secondary bg-opacity-10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-tools text-secondary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-2">Latest Equipment</h3>
+                    <p class="text-gray-600">We invest in state-of-the-art tools like CCTV drain cameras and thermal imaging for precise diagnostics.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="bg-secondary bg-opacity-10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-heart text-secondary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-2">Customer Focus</h3>
+                    <p class="text-gray-600">Rated 4.9/5 by our customers. Your satisfaction is our top priority from start to finish.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Maintenance Packages -->
+    <section id="pricing" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Preventative Maintenance Packages</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Save money and avoid emergencies with our comprehensive care plans</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <!-- Silver Plan -->
+                <div class="package-card bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 hover:shadow-xl border-t-4 border-gray-300">
+                    <div class="bg-gray-100 py-6 px-4 text-center">
+                        <h3 class="text-2xl font-bold text-dark">Silver Care Plan</h3>
+                        <div class="mt-4">
+                            <span class="text-4xl font-bold text-primary">£129</span>
+                            <span class="text-gray-600">/year</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-3 mb-6">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-secondary mt-1 mr-2"></i>
+                                <span>Annual boiler service & safety check</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-secondary mt-1 mr-2"></i>
+                                <span>10% discount on all parts</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-secondary mt-1 mr-2"></i>
+                                <span>Standard response time</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-secondary mt-1 mr-2"></i>
+                                <span>Basic system health check</span>
+                            </li>
+                        </ul>
+                        <div class="space-y-3">
+                            <button class="w-full bg-primary hover:bg-opacity-90 text-white font-bold py-2 px-4 rounded">
+                                Join Now
+                            </button>
+                            <button class="w-full border border-primary text-primary hover:bg-gray-50 font-bold py-2 px-4 rounded">
+                                Email Me Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gold Plan -->
+                <div class="package-card bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 hover:shadow-xl border-t-4 border-secondary transform scale-105 z-10">
+                    <div class="bg-secondary bg-opacity-10 py-6 px-4 text-center relative">
+                        <div class="absolute top-0 right-0 bg-accent text-white text-xs font-bold px-3 py-1 transform translate-x-2 -translate-y-2">POPULAR</div>
+                        <h3 class="text-2xl font-bold text-dark">Gold Care Plan</h3>
+                        <div class="mt-4">
+                            <span class="text-4xl font-bold text-primary">£199</span>
+                            <span class="text-gray-600">/year</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-3 mb-6">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-secondary mt-1 mr-2"></i>
+                                <span>Everything in Silver, plus:</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-secondary mt-1 mr-2"></i>
+                                <span>Priority call-out (50% faster response)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-secondary mt-1 mr-2"></i>
+                                <span>Free annual leak inspection</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-secondary mt-1 mr-2"></i>
+                                <span>15% discount on all parts</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-secondary mt-1 mr-2"></i>
+                                <span>Comprehensive system health check</span>
+                            </li>
+                        </ul>
+                        <div class="space-y-3">
+                            <button class="w-full bg-secondary hover:bg-opacity-90 text-white font-bold py-2 px-4 rounded">
+                                Join Now
+                            </button>
+                            <button class="w-full border border-secondary text-secondary hover:bg-gray-50 font-bold py-2 px-4 rounded">
+                                Email Me Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Platinum Plan -->
+                <div class="package-card bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 hover:shadow-xl border-t-4 border-accent">
+                    <div class="bg-accent bg-opacity-10 py-6 px-4 text-center">
+                        <h3 class="text-2xl font-bold text-dark">Platinum Peace Plan</h3>
+                        <div class="mt-4">
+                            <span class="text-4xl font-bold text-primary">£299</span>
+                            <span class="text-gray-600">/year</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-3 mb-6">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-secondary mt-1 mr-2"></i>
+                                <span>Everything in Gold, plus:</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-secondary mt-1 mr-2"></i>
+                                <span>Full drain revamp & cleaning</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-secondary mt-1 mr-2"></i>
+                                <span>Smart leak sensor installation</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-secondary mt-1 mr-2"></i>
+                                <span>24/7 monitoring alerts</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-secondary mt-1 mr-2"></i>
+                                <span>20% discount on all parts</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-secondary mt-1 mr-2"></i>
+                                <span>VIP emergency response</span>
+                            </li>
+                        </ul>
+                        <div class="space-y-3">
+                            <button class="w-full bg-accent hover:bg-opacity-90 text-white font-bold py-2 px-4 rounded">
+                                Join Now
+                            </button>
+                            <button class="w-full border border-accent text-accent hover:bg-gray-50 font-bold py-2 px-4 rounded">
+                                Email Me Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <p class="text-gray-600 mb-4">Not sure which plan is right for you?</p>
+                <button class="bg-primary hover:bg-opacity-90 text-white font-bold px-6 py-3 rounded-lg">
+                    <i class="fas fa-phone mr-2"></i> Speak to Our Team
+                </button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">What Our Customers Say</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Don't just take our word for it - hear from homeowners and businesses we've helped</p>
+            </div>
+            
+            <div class="relative max-w-4xl mx-auto">
+                <!-- Testimonial Carousel -->
+                <div class="overflow-hidden">
+                    <div id="testimonial-carousel" class="flex transition-transform duration-300">
+                        <!-- Testimonial 1 -->
+                        <div class="min-w-full px-4">
+                            <div class="bg-white p-8 rounded-lg shadow-md">
+                                <div class="flex items-center mb-4">
+                                    <div class="flex">
+                                        <i class="fas fa-star text-yellow-400"></i>
+                                        <i class="fas fa-star text-yellow-400"></i>
+                                        <i class="fas fa-star text-yellow-400"></i>
+                                        <i class="fas fa-star text-yellow-400"></i>
+                                        <i class="fas fa-star text-yellow-400"></i>
+                                    </div>
+                                    <span class="text-gray-500 ml-2">2 days ago</span>
+                                </div>
+                                <p class="text-gray-700 mb-6">"AquaPro saved us from a complete disaster when our basement flooded at 3am. Their emergency team arrived within 45 minutes and worked through the night to fix the burst pipe and dry out the area. Professional, efficient, and surprisingly affordable for emergency work."</p>
+                                <div class="flex items-center">
+                                    <div class="bg-gray-200 w-12 h-12 rounded-full flex items-center justify-center mr-4">
+                                        <i class="fas fa-user text-gray-500 text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-dark">Emma T.</h4>
+                                        <p class="text-gray-500">Brighton</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Testimonial 2 -->
+                        <div class="min-w-full px-4">
+                            <div class="bg-white p-8 rounded-lg shadow-md">
+                                <div class="flex items-center mb-4">
+                                    <div class="flex">
+                                        <i class="fas fa-star text-yellow-400"></i>
+                                        <i class="fas fa-star text-yellow-400"></i>
+                                        <i class="fas fa-star text-yellow-400"></i>
+                                        <i class="fas fa-star text-yellow-400"></i>
+                                        <i class="fas fa-star text-yellow-400"></i>
+                                    </div>
+                                    <span class="text-gray-500 ml-2">1 week ago</span>
+                                </div>
+                                <p class="text-gray-700 mb-6">"After three plumbers couldn't find the source of our mysterious leak, AquaPro's thermal imaging equipment pinpointed it in under an hour. Their no-leak guarantee gave us peace of mind, and their pricing was transparent from the start. Will definitely use them for all our plumbing needs."</p>
+                                <div class="flex items-center">
+                                    <div class="bg-gray-200 w-12 h-12 rounded-full flex items-center justify-center mr-4">
+                                        <i class="fas fa-user text-gray-500 text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-dark">James L.</h4>
+                                        <p class="text-gray-500">London</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Testimonial 3 -->
+                        <div class="min-w-full px-4">
+                            <div class="bg-white p-8 rounded-lg shadow-md">
+                                <div class="flex items-center mb-4">
+                                    <div class="flex">
+                                        <i class="fas fa-star text-yellow-400"></i>
+                                        <i class="fas fa-star text-yellow-400"></i>
+                                        <i class="fas fa-star text-yellow-400"></i>
+                                        <i class="fas fa-star text-yellow-400"></i>
+                                        <i class="fas fa-star text-yellow-400"></i>
+                                    </div>
+                                    <span class="text-gray-500 ml-2">3 weeks ago</span>
+                                </div>
+                                <p class="text-gray-700 mb-6">"The Gold Care Plan has been worth every penny. Our annual service identified a potentially dangerous gas leak we didn't know about, and their priority call-out meant we didn't have to wait days without heating in winter. The team is always polite and leaves everything spotless."</p>
+                                <div class="flex items-center">
+                                    <div class="bg-gray-200 w-12 h-12 rounded-full flex items-center justify-center mr-4">
+                                        <i class="fas fa-user text-gray-500 text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-dark">Sarah K.</h4>
+                                        <p class="text-gray-500">Manchester</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Carousel Controls -->
+                <button id="prev-testimonial" class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-white shadow-md rounded-full w-10 h-10 flex items-center justify-center text-primary hover:bg-gray-100">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button id="next-testimonial" class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-white shadow-md rounded-full w-10 h-10 flex items-center justify-center text-primary hover:bg-gray-100">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+            
+            <!-- Google Reviews -->
+            <div class="mt-12 bg-white rounded-lg shadow-md p-6 max-w-4xl mx-auto">
+                <div class="flex flex-col md:flex-row items-center justify-between">
+                    <div class="flex items-center mb-4 md:mb-0">
+                        <div class="bg-yellow-400 text-white rounded-full w-12 h-12 flex items-center justify-center mr-4">
+                            <i class="fab fa-google text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-dark">Google Reviews</h3>
+                            <div class="flex items-center">
+                                <div class="flex mr-2">
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                </div>
+                                <span class="text-gray-600">4.9/5 from 247 reviews</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="bg-primary hover:bg-opacity-90 text-white font-bold px-4 py-2 rounded">
+                        <i class="fas fa-plus mr-2"></i> Write a Review
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Service Area -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Our Service Areas</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Serving homes and businesses across the South East and beyond</p>
+            </div>
+            
+            <div class="bg-gray-50 rounded-xl p-6 md:p-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-bold text-dark mb-4">Covering These Locations:</h3>
+                        <div class="grid grid-cols-2 gap-4">
+                            <ul class="space-y-2 text-gray-600">
+                                <li class="flex items-center"><i class="fas fa-map-marker-alt text-secondary mr-2"></i> London</li>
+                                <li class="flex items-center"><i class="fas fa-map-marker-alt text-secondary mr-2"></i> Brighton</li>
+                                <li class="flex items-center"><i class="fas fa-map-marker-alt text-secondary mr-2"></i> Croydon</li>
+                                <li class="flex items-center"><i class="fas fa-map-marker-alt text-secondary mr-2"></i> Guildford</li>
+                            </ul>
+                            <ul class="space-y-2 text-gray-600">
+                                <li class="flex items-center"><i class="fas fa-map-marker-alt text-secondary mr-2"></i> Reading</li>
+                                <li class="flex items-center"><i class="fas fa-map-marker-alt text-secondary mr-2"></i> Oxford</li>
+                                <li class="flex items-center"><i class="fas fa-map-marker-alt text-secondary mr-2"></i> Southampton</li>
+                                <li class="flex items-center"><i class="fas fa-map-marker-alt text-secondary mr-2"></i> Portsmouth</li>
+                            </ul>
+                        </div>
+                        <p class="mt-4 text-gray-600">And surrounding areas within 50 miles. Call to check if we cover your location.</p>
+                    </div>
+                    
+                    <div class="bg-gray-200 rounded-lg overflow-hidden">
+                        <!-- Simple map representation -->
+                        <div class="h-full flex items-center justify-center p-4">
+                            <div class="relative w-full h-64">
+                                <!-- London marker -->
+                                <div class="absolute top-1/4 left-1/4">
+                                    <div class="bg-secondary text-white rounded-full w-8 h-8 flex items-center justify-center animate-float">
+                                        <i class="fas fa-map-pin"></i>
+                                    </div>
+                                </div>
+                                <!-- Brighton marker -->
+                                <div class="absolute top-1/2 left-1/3">
+                                    <div class="bg-secondary text-white rounded-full w-8 h-8 flex items-center justify-center animate-float" style="animation-delay: 0.5s;">
+                                        <i class="fas fa-map-pin"></i>
+                                    </div>
+                                </div>
+                                <!-- Other markers -->
+                                <div class="absolute top-1/3 right-1/4">
+                                    <div class="bg-secondary text-white rounded-full w-8 h-8 flex items-center justify-center animate-float" style="animation-delay: 1s;">
+                                        <i class="fas fa-map-pin"></i>
+                                    </div>
+                                </div>
+                                <div class="absolute bottom-1/4 left-1/2">
+                                    <div class="bg-secondary text-white rounded-full w-8 h-8 flex items-center justify-center animate-float" style="animation-delay: 1.5s;">
+                                        <i class="fas fa-map-pin"></i>
+                                    </div>
+                                </div>
+                                <div class="absolute top-1/2 right-1/3">
+                                    <div class="bg-secondary text-white rounded-full w-8 h-8 flex items-center justify-center animate-float" style="animation-delay: 2s;">
+                                        <i class="fas fa-map-pin"></i>
+                                    </div>
+                                </div>
+                                <div class="absolute top-1/4 right-1/4">
+                                    <div class="bg-accent text-white rounded-full w-8 h-8 flex items-center justify-center animate-pulse-slow">
+                                        <i class="fas fa-home"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Blog Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Plumbing Tips & Resources</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Expert advice to help you maintain your plumbing system</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Blog Post 1 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden transition duration-300 hover:shadow-lg">
+                    <div class="h-48 bg-gradient-to-r from-primary to-secondary flex items-center justify-center">
+                        <i class="fas fa-exclamation-triangle text-white text-5xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-dark mb-3">5 Early Signs of a Burst Pipe & What to Do</h3>
+                        <p class="text-gray-600 mb-4">Learn to recognize the subtle warning signs of pipe failure before disaster strikes and know the immediate steps to minimize damage.</p>
+                        <a href="#" class="text-secondary font-medium hover:underline flex items-center">
+                            Read More <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Blog Post 2 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden transition duration-300 hover:shadow-lg">
+                    <div class="h-48 bg-gradient-to-r from-secondary to-accent flex items-center justify-center">
+                        <i class="fas fa-snowflake text-white text-5xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-dark mb-3">How to Prep Your Home for Winter Plumbing</h3>
+                        <p class="text-gray-600 mb-4">Essential winterization checklist to protect your pipes from freezing and avoid costly emergency repairs during cold snaps.</p>
+                        <a href="#" class="text-secondary font-medium hover:underline flex items-center">
+                            Read More <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Blog Post 3 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden transition duration-300 hover:shadow-lg">
+                    <div class="h-48 bg-gradient-to-r from-accent to-primary flex items-center justify-center">
+                        <i class="fas fa-fire text-white text-5xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-dark mb-3">Benefits of a Pre-Season Boiler Service</h3>
+                        <p class="text-gray-600 mb-4">Discover why scheduling your boiler check before winter arrives can improve efficiency, prevent breakdowns, and may be required by your warranty.</p>
+                        <a href="#" class="text-secondary font-medium hover:underline flex items-center">
+                            Read More <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <a href="#" class="bg-primary hover:bg-opacity-90 text-white font-bold px-6 py-3 rounded-lg inline-block">
+                    View All Articles <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Get in Touch</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Ready to solve your plumbing problems? Contact us today.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+                <!-- Contact Form -->
+                <div class="bg-gray-50 rounded-xl p-6 md:p-8 shadow-md">
+                    <h3 class="text-2xl font-bold text-dark mb-6">Send Us a Message</h3>
+                    <form class="space-y-4">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label for="contact-name" class="block text-dark mb-1">Full Name*</label>
+                                <input type="text" id="contact-name" required class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-secondary">
+                            </div>
+                            <div>
+                                <label for="contact-phone" class="block text-dark mb-1">Phone Number*</label>
+                                <input type="tel" id="contact-phone" required class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-secondary">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="contact-email" class="block text-dark mb-1">Email Address*</label>
+                            <input type="email" id="contact-email" required class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-secondary">
+                        </div>
+                        <div>
+                            <label for="contact-postcode" class="block text-dark mb-1">Postcode*</label>
+                            <input type="text" id="contact-postcode" required class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-secondary">
+                        </div>
+                        <div>
+                            <label for="contact-service" class="block text-dark mb-1">Service Needed*</label>
+                            <select id="contact-service" required class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-secondary">
+                                <option value="">Select a service</option>
+                                <option value="emergency">Emergency Plumbing</option>
+                                <option value="boiler">Boiler Service/Repair</option>
+                                <option value="drain">Drain Unblocking</option>
+                                <option value="leak">Leak Detection/Repair</option>
+                                <option value="installation">Installation</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="contact-message" class="block text-dark mb-1">Message</label>
+                            <textarea id="contact-message" rows="4" class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-secondary"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-secondary hover:bg-opacity-90 text-white font-bold py-3 rounded-lg">
+                            Send Message <i class="fas fa-paper-plane ml-2"></i>
+                        </button>
+                    </form>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <div class="bg-primary text-white rounded-xl p-6 md:p-8 mb-6">
+                        <h3 class="text-2xl font-bold mb-4">Emergency Plumbing</h3>
+                        <p class="mb-6">For urgent plumbing issues, call our 24/7 emergency hotline for immediate assistance.</p>
+                        <a href="tel:+447890123456" class="bg-white hover:bg-gray-100 text-primary font-bold px-6 py-3 rounded-lg text-lg inline-block">
+                            <i class="fas fa-phone mr-2"></i> Call +44 7890 123456
+                        </a>
+                    </div>
+                    
+                    <div class="bg-gray-50 rounded-xl p-6 md:p-8 shadow-md">
+                        <h3 class="text-2xl font-bold text-dark mb-4">Contact Information</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="bg-secondary bg-opacity-10 rounded-full w-10 h-10 flex items-center justify-center mr-4 mt-1">
+                                    <i class="fas fa-map-marker-alt text-secondary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-dark">Office Address</h4>
+                                    <p class="text-gray-600">123 Waterway Road<br>London, SE1 8TP</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-secondary bg-opacity-10 rounded-full w-10 h-10 flex items-center justify-center mr-4 mt-1">
+                                    <i class="fas fa-envelope text-secondary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-dark">Email Us</h4>
+                                    <a href="mailto:info@aquaproplumbers.co.uk" class="text-secondary hover:underline">info@aquaproplumbers.co.uk</a>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-secondary bg-opacity-10 rounded-full w-10 h-10 flex items-center justify-center mr-4 mt-1">
+                                    <i class="fas fa-clock text-secondary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-dark">Business Hours</h4>
+                                    <p class="text-gray-600">Monday-Friday: 8am-6pm<br>Saturday: 9am-4pm<br>Emergency: 24/7</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-6 pt-6 border-t border-gray-200">
+                            <h4 class="font-bold text-dark mb-3">Follow Us</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="bg-gray-200 hover:bg-primary hover:text-white text-dark w-10 h-10 rounded-full flex items-center justify-center transition">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#" class="bg-gray-200 hover:bg-primary hover:text-white text-dark w-10 h-10 rounded-full flex items-center justify-center transition">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="bg-gray-200 hover:bg-primary hover:text-white text-dark w-10 h-10 rounded-full flex items-center justify-center transition">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#" class="bg-gray-200 hover:bg-primary hover:text-white text-dark w-10 h-10 rounded-full flex items-center justify-center transition">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Promo Bar -->
+    <div class="promo-bar bg-accent text-white py-3 px-4 shadow-lg">
+        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between">
+            <p class="font-bold mb-2 md:mb-0 text-center md:text-left">Emergency Call-out £49 (Reg. £75) – 24/7 Availability</p>
+            <a href="tel:+447890123456" class="bg-white hover:bg-gray-100 text-accent font-bold px-4 py-2 rounded whitespace-nowrap">
+                <i class="fas fa-phone mr-2"></i> Call Now
+            </a>
+        </div>
+    </div>
+    
+    <!-- Chat Widget -->
+    <div id="chat-widget" class="chat-widget bg-white rounded-lg shadow-xl overflow-hidden w-72">
+        <div class="bg-primary text-white px-4 py-3 flex justify-between items-center">
+            <h3 class="font-bold">Chat with Us</h3>
+            <button id="close-chat" class="text-white hover:text-gray-200">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="p-4">
+            <div class="bg-gray-100 rounded-lg p-3 mb-3">
+                <p class="text-sm">Hi there! How can we help you today?</p>
+            </div>
+            <div class="space-y-2 max-h-60 overflow-y-auto mb-4">
+                <!-- Chat messages would go here -->
+            </div>
+            <div class="flex">
+                <input type="text" placeholder="Type your message..." class="flex-1 border rounded-l-lg px-3 py-2 focus:outline-none focus:ring-1 focus:ring-secondary">
+                <button class="bg-secondary hover:bg-opacity-90 text-white px-3 py-2 rounded-r-lg">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Chat Button -->
+    <button id="open-chat" class="fixed bottom-6 right-6 bg-secondary hover:bg-opacity-90 text-white rounded-full w-14 h-14 flex items-center justify-center shadow-xl z-30">
+        <i class="fas fa-comment-dots text-xl"></i>
+    </button>
+    
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <a href="#" class="flex items-center mb-4">
+                        <div class="bg-secondary text-white rounded-full w-10 h-10 flex items-center justify-center mr-3">
+                            <i class="fas fa-tint text-xl"></i>
+                        </div>
+                        <span class="font-heading font-bold text-xl">AquaPro<span class="text-secondary">Plumbers</span></span>
+                    </a>
+                    <p class="text-gray-400 mb-4">Precision Plumbing. Lasting Peace of Mind.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="font-bold text-lg mb-4">Services</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Residential Plumbing</a></li>
+                        <li><a href="#" class="hover:text-white">Commercial Plumbing</a></li>
+                        <li><a href="#" class="hover:text-white">Heating & Boilers</a></li>
+                        <li><a href="#" class="hover:text-white">Drainage & Waste</a></li>
+                        <li><a href="#" class="hover:text-white">Emergency Plumbing</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="font-bold text-lg mb-4">Company</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">About Us</a></li>
+                        <li><a href="#" class="hover:text-white">Care Plans</a></li>
+                        <li><a href="#" class="hover:text-white">Testimonials</a></li>
+                        <li><a href="#" class="hover:text-white">Service Areas</a></li>
+                        <li><a href="#" class="hover:text-white">Careers</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="font-bold text-lg mb-4">Contact</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-start">
+                            <i class="fas fa-phone-alt text-secondary mt-1 mr-2"></i>
+                            <a href="tel:+447890123456" class="hover:text-white">+44 7890 123456</a>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope text-secondary mt-1 mr-2"></i>
+                            <a href="mailto:info@aquaproplumbers.co.uk" class="hover:text-white">info@aquaproplumbers.co.uk</a>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-secondary mt-1 mr-2"></i>
+                            <span>123 Waterway Road, London, SE1 8TP</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="pt-8 border-t border-gray-800">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 mb-4 md:mb-0">© 2023 AquaPro Plumbers. All rights reserved.</p>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-gray-400 hover:text-white text-sm">Privacy Policy</a>
+                        <a href="#" class="text-gray-400 hover:text-white text-sm">Terms of Service</a>
+                        <a href="#" class="text-gray-400 hover:text-white text-sm">Cookies</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Exit Intent Popup -->
+    <div id="exit-popup" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-lg max-w-md w-full p-6 relative">
+            <button id="close-exit-popup" class="absolute top-4 right-4 text-gray-500 hover:text-dark">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="text-center mb-4">
+                <div class="bg-accent text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-3">
+                    <i class="fas fa-percentage text-2xl"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-primary mb-2">Hold on—claim your 10% off now!</h3>
+                <p class="text-gray-600">Enter your email & postcode to receive an exclusive discount on your first service.</p>
+            </div>
+            <form class="space-y-3">
+                <div>
+                    <input type="email" placeholder="Email Address" class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-secondary">
+                </div>
+                <div>
+                    <input type="text" placeholder="Postcode" class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-secondary">
+                </div>
+                <button type="submit" class="w-full bg-secondary hover:bg-opacity-90 text-white font-bold py-3 rounded-lg">
+                    Claim My 10% Off <i class="fas fa-arrow-right ml-2"></i>
+                </button>
+            </form>
+            <p class="text-xs text-gray-500 mt-3">*Discount applies to first job only. Minimum £100 spend.</p>
+        </div>
+    </div>
+    
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Discount Modal
+        const discountBtn = document.getElementById('discount-btn');
+        const discountModal = document.getElementById('discount-modal');
+        const closeModal = document.getElementById('close-modal');
+        
+        discountBtn.addEventListener('click', () => {
+            discountModal.classList.remove('hidden');
+        });
+        
+        closeModal.addEventListener('click', () => {
+            discountModal.classList.add('hidden');
+        });
+        
+        // Testimonial Carousel
+        let currentTestimonial = 0;
+        const testimonials = document.querySelectorAll('#testimonial-carousel > div');
+        const prevTestimonialBtn = document.getElementById('prev-testimonial');
+        const nextTestimonialBtn = document.getElementById('next-testimonial');
+        
+        function showTestimonial(index) {
+            testimonials.forEach((testimonial, i) => {
+                testimonial.style.display = i === index ? 'block' : 'none';
+            });
+        }
+        
+        prevTestimonialBtn.addEventListener('click', () => {
+            currentTestimonial = (currentTestimonial - 1 + testimonials.length) % testimonials.length;
+            showTestimonial(currentTestimonial);
+        });
+        
+        nextTestimonialBtn.addEventListener('click', () => {
+            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+            showTestimonial(currentTestimonial);
+        });
+        
+        // Initialize first testimonial
+        showTestimonial(currentTestimonial);
+        
+        // Chat Widget
+        const chatWidget = document.getElementById('chat-widget');
+        const openChatBtn = document.getElementById('open-chat');
+        const closeChatBtn = document.getElementById('close-chat');
+        
+        openChatBtn.addEventListener('click', () => {
+            chatWidget.classList.add('active');
+        });
+        
+        closeChatBtn.addEventListener('click', () => {
+            chatWidget.classList.remove('active');
+        });
+        
+        // Show chat widget on scroll
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500 && !chatWidget.classList.contains('active')) {
+                setTimeout(() => {
+                    chatWidget.classList.add('active');
+                }, 3000);
+            }
+        });
+        
+        // Countdown Timer
+        function updateCountdown() {
+            const now = new Date();
+            const midnight = new Date();
+            midnight.setHours(24, 0, 0, 0);
+            
+           
+</body>
+</html>
