@@ -3,1007 +3,988 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AquaPro Plumbers | Precision Plumbing. Lasting Peace of Mind.</title>
-    <meta name="description" content="Trusted plumbing experts in the UK offering residential, commercial, and emergency plumbing services with fast response and fair prices.">
+    <title>TrustVolt Electric | UK's Most Trusted Electricians</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        primary: '#006994', // Navy blue
-                        secondary: '#00B4D8', // Aqua blue
-                        accent: '#FF6B6B', // Coral accent
-                        dark: '#1E293B',
-                        light: '#F8FAFC',
+                        'trustvolt-blue': '#0056b3',
+                        'trustvolt-yellow': '#ffc107',
+                        'trustvolt-dark': '#1a2a3a',
                     },
                     fontFamily: {
-                        heading: ['Montserrat', 'sans-serif'],
-                        body: ['Poppins', 'sans-serif'],
+                        'heading': ['Montserrat', 'sans-serif'],
+                        'body': ['Poppins', 'sans-serif'],
                     },
-                    animation: {
-                        'pulse-slow': 'pulse 3s infinite',
-                        'float': 'float 3s ease-in-out infinite',
-                    },
-                    keyframes: {
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-10px)' },
-                        }
-                    }
                 }
             }
         }
     </script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Poppins:wght@400;500;600&display=swap');
-        
-        body {
-            font-family: 'Poppins', sans-serif;
-            scroll-behavior: smooth;
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1605152276897-4f618f831968?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
-        
-        h1, h2, h3, h4 {
-            font-family: 'Montserrat', sans-serif;
+        .hover-lift {
+            transition: transform 0.3s ease;
         }
-        
-        .hero-video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: -1;
-        }
-        
-        .hero-overlay {
-            background: rgba(0, 0, 0, 0.4);
-            background: linear-gradient(90deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.3) 100%);
-        }
-        
-        .service-card:hover {
+        .hover-lift:hover {
             transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
-        
-        .package-card:hover {
-            transform: scale(1.03);
+        .pulse {
+            animation: pulse 2s infinite;
         }
-        
-        .testimonial-card {
-            transition: all 0.3s ease;
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(0, 86, 179, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(0, 86, 179, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(0, 86, 179, 0);
+            }
         }
-        
-        .sticky-banner {
-            position: sticky;
-            top: 0;
-            z-index: 50;
+        .slide-in {
+            animation: slideIn 1s ease-out;
         }
-        
-        .promo-bar {
+        @keyframes slideIn {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        .sticky-contact-bar {
             position: fixed;
             bottom: 0;
             left: 0;
             right: 0;
-            z-index: 40;
-        }
-        
-        .chat-widget {
-            position: fixed;
-            bottom: 100px;
-            right: 20px;
-            z-index: 30;
-            transform: translateX(120%);
-            transition: transform 0.3s ease;
-        }
-        
-        .chat-widget.active {
-            transform: translateX(0);
-        }
-        
-        .countdown-ribbon {
-            clip-path: polygon(0 0, 100% 0, 95% 100%, 5% 100%);
-        }
-        
-        @media (max-width: 768px) {
-            .hero-content {
-                padding-top: 120px;
-            }
-            
-            .countdown-ribbon {
-                clip-path: none;
-            }
+            z-index: 1000;
         }
     </style>
 </head>
-<body class="bg-gray-50 text-dark">
-    <!-- Sticky Lead Capture Banner -->
-    <div class="sticky-banner bg-primary text-white py-3 px-4 shadow-md">
-        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between">
-            <p class="font-bold mb-2 md:mb-0 text-center md:text-left">Need Help Now? Enter Your Postcode & Phone → Get Instant Quote & Exclusive Deals</p>
-            <div class="flex gap-2 w-full md:w-auto">
-                <input type="text" placeholder="Your Postcode" class="px-3 py-2 rounded text-dark w-full md:w-40">
-                <input type="tel" placeholder="Phone Number" class="px-3 py-2 rounded text-dark w-full md:w-40">
-                <button class="bg-accent hover:bg-opacity-90 text-white font-bold px-4 py-2 rounded whitespace-nowrap">Get Quote</button>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Countdown Ribbon -->
-    <div class="countdown-ribbon bg-accent text-white text-center py-3 px-4">
-        <div class="container mx-auto">
-            <p class="font-bold">
-                <span class="mr-4">Limited slots for Spring Boiler Service – Book by Midnight!</span>
-                <span id="countdown" class="inline-block font-mono">23:59:59</span>
-            </p>
-        </div>
-    </div>
-    
+<body class="font-body bg-gray-50">
     <!-- Navigation -->
-    <nav class="bg-white shadow-md py-4">
-        <div class="container mx-auto px-4 flex justify-between items-center">
+    <nav class="bg-trustvolt-dark text-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
             <div class="flex items-center">
-                <a href="#" class="flex items-center">
-                    <div class="bg-secondary text-white rounded-full w-10 h-10 flex items-center justify-center mr-3">
-                        <i class="fas fa-tint text-xl"></i>
-                    </div>
-                    <span class="text-primary font-heading font-bold text-xl">AquaPro<span class="text-secondary">Plumbers</span></span>
-                </a>
+                <i class="fas fa-bolt text-trustvolt-yellow text-2xl mr-2"></i>
+                <a href="#" class="font-heading text-xl font-bold">TrustVolt <span class="text-trustvolt-yellow">Electric</span></a>
             </div>
-            
-            <div class="hidden md:flex space-x-8">
-                <a href="#services" class="text-dark hover:text-secondary font-medium">Services</a>
-                <a href="#emergency" class="text-dark hover:text-secondary font-medium">Emergency</a>
-                <a href="#pricing" class="text-dark hover:text-secondary font-medium">Pricing</a>
-                <a href="#about" class="text-dark hover:text-secondary font-medium">About</a>
-                <a href="#contact" class="text-dark hover:text-secondary font-medium">Contact</a>
+            <div class="hidden md:flex space-x-6">
+                <a href="#services" class="hover:text-trustvolt-yellow transition">Services</a>
+                <a href="#about" class="hover:text-trustvolt-yellow transition">About</a>
+                <a href="#testimonials" class="hover:text-trustvolt-yellow transition">Testimonials</a>
+                <a href="#contact" class="hover:text-trustvolt-yellow transition">Contact</a>
             </div>
-            
             <div class="md:hidden">
-                <button id="mobile-menu-button" class="text-dark hover:text-secondary">
+                <button id="mobile-menu-button" class="text-white focus:outline-none">
                     <i class="fas fa-bars text-2xl"></i>
                 </button>
             </div>
         </div>
-        
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white absolute w-full left-0 px-4 pb-4 shadow-lg z-50">
-            <a href="#services" class="block py-2 text-dark hover:text-secondary">Services</a>
-            <a href="#emergency" class="block py-2 text-dark hover:text-secondary">Emergency</a>
-            <a href="#pricing" class="block py-2 text-dark hover:text-secondary">Pricing</a>
-            <a href="#about" class="block py-2 text-dark hover:text-secondary">About</a>
-            <a href="#contact" class="block py-2 text-dark hover:text-secondary">Contact</a>
-            <div class="mt-4 pt-4 border-t">
-                <a href="tel:+447890123456" class="bg-secondary text-white font-bold px-4 py-2 rounded inline-block">
-                    <i class="fas fa-phone mr-2"></i> Call Now
-                </a>
-            </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-trustvolt-dark pb-4 px-4">
+            <a href="#services" class="block py-2 hover:text-trustvolt-yellow transition">Services</a>
+            <a href="#about" class="block py-2 hover:text-trustvolt-yellow transition">About</a>
+            <a href="#testimonials" class="block py-2 hover:text-trustvolt-yellow transition">Testimonials</a>
+            <a href="#contact" class="block py-2 hover:text-trustvolt-yellow transition">Contact</a>
         </div>
     </nav>
-    
+
     <!-- Hero Section -->
-    <section class="relative h-screen flex items-center overflow-hidden">
-        <div class="hero-overlay absolute inset-0 z-10"></div>
-        <video autoplay muted loop class="hero-video">
-            <source src="https://assets.mixkit.co/videos/preview/mixkit-plumber-working-on-a-pipe-15847-large.mp4" type="video/mp4">
-        </video>
-        
-        <div class="container mx-auto px-4 z-20 hero-content">
-            <div class="max-w-2xl text-white">
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight">Trusted Plumbing Experts – Fast Response, Fair Prices</h1>
-                <p class="text-xl md:text-2xl mb-8">From drips to disasters, AquaPro Plumbers are on call 24/7</p>
-                <div class="flex flex-col sm:flex-row gap-4">
-                    <button id="discount-btn" class="bg-accent hover:bg-opacity-90 text-white font-bold px-6 py-3 rounded-lg text-lg animate-pulse-slow">
-                        <i class="fas fa-percentage mr-2"></i> Get 15% Off First Job
-                    </button>
-                    <a href="tel:+447890123456" class="bg-white hover:bg-gray-100 text-primary font-bold px-6 py-3 rounded-lg text-lg text-center">
-                        <i class="fas fa-phone mr-2"></i> Call +44 7890 123456
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Discount Modal -->
-    <div id="discount-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
-        <div class="bg-white rounded-lg max-w-md w-full p-6 relative">
-            <button id="close-modal" class="absolute top-4 right-4 text-gray-500 hover:text-dark">
-                <i class="fas fa-times"></i>
-            </button>
-            <h3 class="text-2xl font-bold text-primary mb-4">Claim Your 15% Discount</h3>
-            <form class="space-y-4">
-                <div>
-                    <label for="name" class="block text-dark mb-1">Full Name</label>
-                    <input type="text" id="name" class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-secondary">
-                </div>
-                <div>
-                    <label for="phone" class="block text-dark mb-1">Phone Number</label>
-                    <input type="tel" id="phone" class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-secondary">
-                </div>
-                <div>
-                    <label for="postcode" class="block text-dark mb-1">Postcode</label>
-                    <input type="text" id="postcode" class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-secondary">
-                </div>
-                <div>
-                    <label for="service" class="block text-dark mb-1">Service Needed</label>
-                    <select id="service" class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-secondary">
-                        <option value="">Select a service</option>
-                        <option value="emergency">Emergency Plumbing</option>
-                        <option value="boiler">Boiler Service/Repair</option>
-                        <option value="drain">Drain Unblocking</option>
-                        <option value="leak">Leak Detection/Repair</option>
-                        <option value="installation">Installation</option>
-                        <option value="other">Other</option>
-                    </select>
-                </div>
-                <button type="submit" class="w-full bg-secondary hover:bg-opacity-90 text-white font-bold py-3 rounded-lg">
-                    Claim My Discount <i class="fas fa-arrow-right ml-2"></i>
-                </button>
-            </form>
-            <p class="text-sm text-gray-500 mt-4">*Discount applies to first job only. Minimum £100 spend. Not valid with other offers.</p>
-        </div>
-    </div>
-    
-    <!-- Trust Badges -->
-    <section class="py-8 bg-gray-100">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16">
-                <div class="flex items-center">
-                    <img src="https://www.gassaferegister.co.uk/assets/images/gas-safe-register-logo.svg" alt="Gas Safe Registered" class="h-12">
-                </div>
-                <div class="flex items-center">
-                    <img src="https://www.ciphe.org.uk/wp-content/uploads/2021/09/ciphe-logo.svg" alt="CIPHE Member" class="h-12">
-                </div>
-                <div class="flex items-center">
-                    <img src="https://www.watersafe.org.uk/wp-content/themes/watersafe/assets/images/logo.svg" alt="WaterSafe Approved" class="h-12">
-                </div>
-                <div class="flex items-center">
-                    <div class="bg-white rounded-lg p-2 shadow">
-                        <div class="flex items-center">
-                            <i class="fas fa-shield-alt text-3xl text-secondary mr-2"></i>
-                            <span class="font-bold">Fully Insured</span>
-                        </div>
+    <section class="hero-bg min-h-screen flex items-center text-white relative">
+        <div class="container mx-auto px-4 py-20 md:py-32">
+            <div class="max-w-2xl slide-in">
+                <h1 class="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-4">UK's Most Trusted Electricians</h1>
+                <p class="text-xl md:text-2xl mb-8">Fast, Reliable & Upfront Pricing for Residential & Commercial Electrical Services</p>
+                <div class="flex flex-wrap gap-4 mb-12">
+                    <div class="text-trustvolt-yellow">
+                        <i class="fas fa-bolt mr-2"></i> 10% Off Your First Service
+                    </div>
+                    <div class="text-white">
+                        <i class="fas fa-phone mr-2"></i> Call +44 1234 567 890
                     </div>
                 </div>
             </div>
         </div>
+        
     </section>
-    
+
+    <!-- Special Offers Bar -->
+    <div class="bg-trustvolt-yellow text-trustvolt-dark py-3 px-4 shadow-md">
+        <div class="container mx-auto flex flex-wrap items-center justify-between">
+            <div class="font-bold text-lg mb-2 md:mb-0">
+                <i class="fas fa-snowflake mr-2"></i> Fault-finding – Only £99/FIRST hour (Save £30)   Remaining £55/hour
+            </div>
+            <a href="#quote-form" class="bg-trustvolt-dark hover:bg-gray-800 text-white font-bold py-2 px-4 rounded transition">
+                Book Now <i class="fas fa-arrow-right ml-1"></i>
+            </a>
+        </div>
+    </div>
+
     <!-- Services Section -->
     <section id="services" class="py-16 bg-white">
         <div class="container mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Our Plumbing Services</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Comprehensive plumbing solutions for homes and businesses across the UK</p>
+            <div class="text-center mb-16">
+                <h2 class="font-heading text-3xl md:text-4xl font-bold mb-4">Our Electrical Services</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">From emergency call-outs to complete rewiring, we provide comprehensive electrical solutions for homes and businesses across the UK.</p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Residential Plumbing -->
-                <div class="service-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300 hover:shadow-xl">
-                    <div class="h-48 bg-gradient-to-r from-primary to-secondary flex items-center justify-center">
-                        <i class="fas fa-home text-white text-6xl"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-dark mb-3">Residential Plumbing</h3>
-                        <ul class="space-y-2 text-gray-600 mb-4">
-                            <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-2"></i> Leak detection & repair</li>
-                            <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-2"></i> Tap & valve replacements</li>
-                            <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-2"></i> Toilet, basin & shower installations</li>
-                            <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-2"></i> Pressurized pipe relining</li>
-                            <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-2"></i> Burst pipe emergency fixes</li>
-                        </ul>
-                        <button class="w-full bg-primary hover:bg-opacity-90 text-white font-bold py-2 px-4 rounded">
-                            Request Free Quote
-                        </button>
+            <!-- Service Tabs -->
+            <div class="mb-12">
+                <div class="flex flex-wrap justify-center gap-2 mb-8">
+                    <button class="service-tab-btn active px-4 py-2 bg-trustvolt-blue text-white rounded-full" data-tab="residential">Residential</button>
+                    <button class="service-tab-btn px-4 py-2 bg-gray-200 hover:bg-gray-300 text-trustvolt-dark rounded-full transition" data-tab="commercial">Commercial</button>
+                    <button class="service-tab-btn px-4 py-2 bg-gray-200 hover:bg-gray-300 text-trustvolt-dark rounded-full transition" data-tab="emergency">Emergency</button>
+                    <button class="service-tab-btn px-4 py-2 bg-gray-200 hover:bg-gray-300 text-trustvolt-dark rounded-full transition" data-tab="custom">Custom Solutions</button>
+                </div>
+                
+                <!-- Residential Services -->
+                <div id="residential" class="service-tab-content active">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="bg-gray-50 p-6 rounded-lg shadow hover-lift">
+                            <div class="text-trustvolt-blue text-4xl mb-4">
+                                <i class="fas fa-home"></i>
+                            </div>
+                            <h3 class="font-heading text-xl font-bold mb-3">Fault Finding & Rewiring</h3>
+                            <ul class="space-y-2 text-gray-600">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-trustvolt-yellow mr-2 mt-1"></i>
+                                    <span>Complete home rewiring</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-trustvolt-yellow mr-2 mt-1"></i>
+                                    <span>Faulty circuit diagnosis</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-trustvolt-yellow mr-2 mt-1"></i>
+                                    <span>Consumer unit replacements</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-trustvolt-yellow mr-2 mt-1"></i>
+                                    <span>Periodic inspection reports</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-6 rounded-lg shadow hover-lift">
+                            <div class="text-trustvolt-blue text-4xl mb-4">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <h3 class="font-heading text-xl font-bold mb-3">Lighting Installation</h3>
+                            <ul class="space-y-2 text-gray-600">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-trustvolt-yellow mr-2 mt-1"></i>
+                                    <span>Indoor & outdoor lighting</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-trustvolt-yellow mr-2 mt-1"></i>
+                                    <span>LED lighting upgrades</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-trustvolt-yellow mr-2 mt-1"></i>
+                                    <span>Smart lighting systems</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-trustvolt-yellow mr-2 mt-1"></i>
+                                    <span>Security lighting</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-6 rounded-lg shadow hover-lift">
+                            <div class="text-trustvolt-blue text-4xl mb-4">
+                                <i class="fas fa-plug"></i>
+                            </div>
+                            <h3 class="font-heading text-xl font-bold mb-3">Outlet & Switch Upgrades</h3>
+                            <ul class="space-y-2 text-gray-600">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-trustvolt-yellow mr-2 mt-1"></i>
+                                    <span>Socket replacements</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-trustvolt-yellow mr-2 mt-1"></i>
+                                    <span>USB charging sockets</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-trustvolt-yellow mr-2 mt-1"></i>
+                                    <span>Light switch upgrades</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-trustvolt-yellow mr-2 mt-1"></i>
+                                    <span>Tripping circuit fixes</span>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
                 
-                <!-- Commercial Plumbing -->
-                <div class="service-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300 hover:shadow-xl">
-                    <div class="h-48 bg-gradient-to-r from-secondary to-accent flex items-center justify-center">
-                        <i class="fas fa-building text-white text-6xl"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-dark mb-3">Commercial Plumbing</h3>
-                        <ul class="space-y-2 text-gray-600 mb-4">
-                            <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-2"></i> Shop & office plumbing fit-outs</li>
-                            <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-2"></i> Boiler room maintenance & repairs</li>
-                            <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-2"></i> Backflow prevention & certification</li>
-                            <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-2"></i> Water meter installations</li>
-                            <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-2"></i> Custom pipework & industrial drainage</li>
-                        </ul>
-                        <button class="w-full bg-primary hover:bg-opacity-90 text-white font-bold py-2 px-4 rounded">
-                            Request Free Quote
-                        </button>
-                    </div>
-                </div>
-                
-                <!-- Heating & Boiler Services -->
-                <div class="service-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300 hover:shadow-xl">
-                    <div class="h-48 bg-gradient-to-r from-accent to-primary flex items-center justify-center">
-                        <i class="fas fa-fire text-white text-6xl"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-dark mb-3">Heating & Boiler Services</h3>
-                        <ul class="space-y-2 text-gray-600 mb-4">
-                            <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-2"></i> Boiler installations & upgrades</li>
-                            <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-2"></i> Annual servicing & safety gas checks</li>
-                            <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-2"></i> Central heating system flush</li>
-                            <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-2"></i> Smart thermostat setup</li>
-                            <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-2"></i> Powerflush & radiators balancing</li>
-                        </ul>
-                        <button class="w-full bg-primary hover:bg-opacity-90 text-white font-bold py-2 px-4 rounded">
-                            Request Free Quote
-                        </button>
-                    </div>
-                </div>
-                
-                <!-- Drainage & Waste -->
-                <div class="service-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300 hover:shadow-xl">
-                    <div class="h-48 bg-gradient-to-r from-primary to-secondary flex items-center justify-center">
-                        <i class="fas fa-water text-white text-6xl"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-dark mb-3">Drainage & Waste</h3>
-                        <ul class="space-y-2 text-gray-600 mb-4">
-                            <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-2"></i> Blocked drain clearing & high-pressure jetting</li>
-                            <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-2"></i> CCTV drain surveys</li>
-                            <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-2"></i> Gully trap maintenance</li>
-                            <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-2"></i> Kitchen & bathroom waste repairs</li>
-                            <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-2"></i> Sabi systems & grease trap cleaning</li>
-                        </ul>
-                        <button class="w-full bg-primary hover:bg-opacity-90 text-white font-bold py-2 px-4 rounded">
-                            Request Free Quote
-                        </button>
-                    </div>
-                </div>
-                
-                <!-- Emergency Plumbing -->
-                <div class="service-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300 hover:shadow-xl">
-                    <div class="h-48 bg-gradient-to-r from-secondary to-accent flex items-center justify-center">
-                        <i class="fas fa-exclamation-triangle text-white text-6xl"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-dark mb-3">Emergency Plumbing</h3>
-                        <ul class="space-y-2 text-gray-600 mb-4">
-                            <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-2"></i> 24/7 rapid response call-out</li>
-                            <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-2"></i> Flood control & water extraction</li>
-                            <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-2"></i> Tripping leak shut-off</li>
-                            <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-2"></i> Emergency plasterboard & containment</li>
-                            <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-2"></i> Temporary pipe bypass solutions</li>
-                        </ul>
-                        <a href="tel:+447890123456" class="block w-full bg-accent hover:bg-opacity-90 text-white font-bold py-2 px-4 rounded text-center">
-                            <i class="fas fa-phone mr-2"></i> Call Emergency
-                        </a>
+                <!-- Commercial Services (hidden by default) -->
+                <div id="commercial" class="service-tab-content hidden">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="bg-gray-50 p-6 rounded-lg shadow hover-lift">
+                            <div class="text-trustvolt-blue text-4xl mb-4">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <h3 class="font-heading text-xl font-bold mb-3">Office Fit-Outs</h3>
+                            <ul class="space-y-2 text-gray-600">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-trustvolt-yellow mr-2 mt-1"></i>
+                                    <span>Complete electrical installations</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-trustvolt-yellow mr-2 mt-1"></i>
+                                    <span>Partition wiring</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-trustvolt-yellow mr-2 mt-1"></i>
+                                    <span>Lighting design & installation</span>
+                                </li>
+                            </ul>
+                            <a href="#quote-form" class="mt-6 inline-block bg-trustvolt-blue hover:bg-blue-700 text-white font-bold py-2 px-6 rounded transition">
+                                Get a Quote
+                            </a>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-6 rounded-lg shadow hover-lift">
+                            <div class="text-trustvolt-blue text-4xl mb-4">
+                                <i class="fas fa-industry"></i>
+                            </div>
+                            <h3 class="font-heading text-xl font-bold mb-3">Three-Phase Power</h3>
+                            <ul class="space-y-2 text-gray-600">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-trustvolt-yellow mr-2 mt-1"></i>
+                                    <span>Three-phase installation</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-trustvolt-yellow mr-2 mt-1"></i>
+                                    <span>Distribution board upgrades</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-trustvolt-yellow mr-2 mt-1"></i>
+                                    <span>Heavy machinery wiring</span>
+                                </li>
+                            </ul>
+                            <a href="#quote-form" class="mt-6 inline-block bg-trustvolt-blue hover:bg-blue-700 text-white font-bold py-2 px-6 rounded transition">
+                                Get a Quote
+                            </a>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-6 rounded-lg shadow hover-lift">
+                            <div class="text-trustvolt-blue text-4xl mb-4">
+                                <i class="fas fa-network-wired"></i>
+                            </div>
+                            <h3 class="font-heading text-xl font-bold mb-3">Data Cabling</h3>
+                            <ul class="space-y-2 text-gray-600">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-trustvolt-yellow mr-2 mt-1"></i>
+                                    <span>Structured cabling systems</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-trustvolt-yellow mr-2 mt-1"></i>
+                                    <span>CAT6/7 installations</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-trustvolt-yellow mr-2 mt-1"></i>
+                                    <span>Server room wiring</span>
+                                </li>
+                            </ul>
+                            <a href="#quote-form" class="mt-6 inline-block bg-trustvolt-blue hover:bg-blue-700 text-white font-bold py-2 px-6 rounded transition">
+                                Get a Quote
+                            </a>
+                        </div>
                     </div>
                 </div>
                 
-                <!-- Green & Smart Solutions -->
-                <div class="service-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300 hover:shadow-xl">
-                    <div class="h-48 bg-gradient-to-r from-accent to-primary flex items-center justify-center">
-                        <i class="fas fa-leaf text-white text-6xl"></i>
+                <!-- Emergency Services (hidden by default) -->
+                <div id="emergency" class="service-tab-content hidden">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="bg-gray-50 p-6 rounded-lg shadow hover-lift">
+                            <div class="text-trustvolt-blue text-4xl mb-4">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <h3 class="font-heading text-xl font-bold mb-3">24/7 Emergency Call-Out</h3>
+                            <ul class="space-y-2 text-gray-600">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-trustvolt-yellow mr-2 mt-1"></i>
+                                    <span>24/7 availability</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-trustvolt-yellow mr-2 mt-1"></i>
+                                    <span>Rapid response times</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-trustvolt-yellow mr-2 mt-1"></i>
+                                    <span>Power outage solutions</span>
+                                </li>
+                            </ul>
+                            <a href="tel:+441234567890" class="mt-6 inline-block bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-6 rounded transition">
+                                <i class="fas fa-phone mr-1"></i> Call Now
+                            </a>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-6 rounded-lg shadow hover-lift">
+                            <div class="text-trustvolt-blue text-4xl mb-4">
+                                <i class="fas fa-fire-extinguisher"></i>
+                            </div>
+                            <h3 class="font-heading text-xl font-bold mb-3">Urgent Hazard Fixes</h3>
+                            <ul class="space-y-2 text-gray-600">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-trustvolt-yellow mr-2 mt-1"></i>
+                                    <span>Smoking outlets</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-trustvolt-yellow mr-2 mt-1"></i>
+                                    <span>Burning smells</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-trustvolt-yellow mr-2 mt-1"></i>
+                                    <span>Spark hazards</span>
+                                </li>
+                            </ul>
+                            <a href="tel:+441234567890" class="mt-6 inline-block bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-6 rounded transition">
+                                <i class="fas fa-phone mr-1"></i> Call Now
+                            </a>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-6 rounded-lg shadow hover-lift">
+                            <div class="text-trustvolt-blue text-4xl mb-4">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                            <h3 class="font-heading text-xl font-bold mb-3">Tripping Circuit Solutions</h3>
+                            <ul class="space-y-2 text-gray-600">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-trustvolt-yellow mr-2 mt-1"></i>
+                                    <span>Circuit breaker issues</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-trustvolt-yellow mr-2 mt-1"></i>
+                                    <span>RCD troubleshooting</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-trustvolt-yellow mr-2 mt-1"></i>
+                                    <span>Fuse box problems</span>
+                                </li>
+                            </ul>
+                            <a href="tel:+441234567890" class="mt-6 inline-block bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-6 rounded transition">
+                                <i class="fas fa-phone mr-1"></i> Call Now
+                            </a>
+                        </div>
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-dark mb-3">Green & Smart Solutions</h3>
-                        <ul class="space-y-2 text-gray-600 mb-4">
-                            <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-2"></i> Rainwater harvesting setups</li>
-                            <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-2"></i> Solar thermal & heat-pump integration</li>
-                            <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-2"></i> Greywater recycling systems</li>
-                            <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-2"></i> Smart leak detectors</li>
-                            <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-2"></i> Water usage monitoring</li>
-                        </ul>
-                        <button class="w-full bg-primary hover:bg-opacity-90 text-white font-bold py-2 px-4 rounded">
-                            Request Free Quote
-                        </button>
+                </div>
+                
+                <!-- Custom Solutions (hidden by default) -->
+                <div id="custom" class="service-tab-content hidden">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="bg-gray-50 p-6 rounded-lg shadow hover-lift">
+                            <div class="text-trustvolt-blue text-4xl mb-4">
+                                <i class="fas fa-car-battery"></i>
+                            </div>
+                            <h3 class="font-heading text-xl font-bold mb-3">EV Charger Installation</h3>
+                            <ul class="space-y-2 text-gray-600">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-trustvolt-yellow mr-2 mt-1"></i>
+                                    <span>Home EV charger setup</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-trustvolt-yellow mr-2 mt-1"></i>
+                                    <span>Commercial charging points</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-trustvolt-yellow mr-2 mt-1"></i>
+                                    <span>OLEV grant applications</span>
+                                </li>
+                            </ul>
+                            <a href="#quote-form" class="mt-6 inline-block bg-trustvolt-blue hover:bg-blue-700 text-white font-bold py-2 px-6 rounded transition">
+                                Get a Quote
+                            </a>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-6 rounded-lg shadow hover-lift">
+                            <div class="text-trustvolt-blue text-4xl mb-4">
+                                <i class="fas fa-film"></i>
+                            </div>
+                            <h3 class="font-heading text-xl font-bold mb-3">Home Theater Wiring</h3>
+                            <ul class="space-y-2 text-gray-600">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-trustvolt-yellow mr-2 mt-1"></i>
+                                    <span>Surround sound systems</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-trustvolt-yellow mr-2 mt-1"></i>
+                                    <span>HDMI & speaker cabling</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-trustvolt-yellow mr-2 mt-1"></i>
+                                    <span>Projector installations</span>
+                                </li>
+                            </ul>
+                            <a href="#quote-form" class="mt-6 inline-block bg-trustvolt-blue hover:bg-blue-700 text-white font-bold py-2 px-6 rounded transition">
+                                Get a Quote
+                            </a>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-6 rounded-lg shadow hover-lift">
+                            <div class="text-trustvolt-blue text-4xl mb-4">
+                                <i class="fas fa-tree"></i>
+                            </div>
+                            <h3 class="font-heading text-xl font-bold mb-3">Outdoor & Landscape Lighting</h3>
+                            <ul class="space-y-2 text-gray-600">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-trustvolt-yellow mr-2 mt-1"></i>
+                                    <span>Garden lighting</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-trustvolt-yellow mr-2 mt-1"></i>
+                                    <span>Patio & deck lighting</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-trustvolt-yellow mr-2 mt-1"></i>
+                                    <span>Security lighting</span>
+                                </li>
+                            </ul>
+                            <a href="#quote-form" class="mt-6 inline-block bg-trustvolt-blue hover:bg-blue-700 text-white font-bold py-2 px-6 rounded transition">
+                                Get a Quote
+                            </a>
+                        </div>
                     </div>
+                </div>
+            </div>
+            
+            <!-- Service Areas -->
+            <div class="text-center mb-8">
+                <h3 class="font-heading text-2xl font-bold mb-2">We Serve These Areas</h3>
+                <p class="text-gray-600 mb-4">Covering all major cities and surrounding areas across the UK</p>
+                <div class="flex flex-wrap justify-center gap-2">
+                    <span class="bg-gray-100 px-3 py-1 rounded-full">London</span>
+                    <span class="bg-gray-100 px-3 py-1 rounded-full">Manchester</span>
+                    <span class="bg-gray-100 px-3 py-1 rounded-full">Birmingham</span>
+                    <span class="bg-gray-100 px-3 py-1 rounded-full">Glasgow</span>
+                    <span class="bg-gray-100 px-3 py-1 rounded-full">Edinburgh</span>
+                    <span class="bg-gray-100 px-3 py-1 rounded-full">Cardiff</span>
+                    <span class="bg-gray-100 px-3 py-1 rounded-full">Belfast</span>
+                    <span class="bg-gray-100 px-3 py-1 rounded-full">Bristol</span>
                 </div>
             </div>
         </div>
     </section>
-    
-    <!-- Emergency Banner -->
-    <section id="emergency" class="py-12 bg-gradient-to-r from-primary to-secondary">
+
+    <!-- Packages Section -->
+    <section class="py-16 bg-gray-100">
         <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row items-center justify-between">
-                <div class="text-white mb-6 md:mb-0">
-                    <h2 class="text-3xl font-bold mb-2">24/7 Emergency Plumbing Services</h2>
-                    <p class="text-xl">Don't let a plumbing emergency ruin your day. We're here to help, any time.</p>
-                </div>
-                <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="tel:+447890123456" class="bg-white hover:bg-gray-100 text-primary font-bold px-6 py-3 rounded-lg text-lg text-center animate-pulse-slow">
-                        <i class="fas fa-phone mr-2"></i> Call Emergency
-                    </a>
-                    <button class="bg-accent hover:bg-opacity-90 text-white font-bold px-6 py-3 rounded-lg text-lg">
-                        <i class="fas fa-envelope mr-2"></i> Send Message
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Why Choose Us -->
-    <section class="py-16 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Why Choose AquaPro Plumbers?</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Experience the difference with our professional plumbing services</p>
+            <div class="text-center mb-16">
+                <h2 class="font-heading text-3xl md:text-4xl font-bold mb-4">Our Electrical Packages</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Simple, transparent pricing for common electrical needs. All work comes with our 12-month guarantee.</p>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white p-6 rounded-lg shadow-md text-center">
-                    <div class="bg-secondary bg-opacity-10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-clock text-secondary text-2xl"></i>
+                <!-- Bronze Package -->
+                <div class="bg-white p-8 rounded-lg shadow-lg hover-lift">
+                    <div class="text-center mb-6">
+                        <h3 class="font-heading text-2xl font-bold mb-2">Bronze Package</h3>
+                        <div class="text-4xl font-bold text-trustvolt-blue mb-2">£99</div>
+                        <div class="text-gray-500">Basic electrical needs</div>
                     </div>
-                    <h3 class="text-xl font-bold text-dark mb-2">Fast Response</h3>
-                    <p class="text-gray-600">Average response time under 60 minutes for emergencies. We're there when you need us most.</p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-trustvolt-yellow mr-2 mt-1"></i>
+                            <span>Fault-finding service</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-trustvolt-yellow mr-2 mt-1"></i>
+                            <span>Basic electrical repairs</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-trustvolt-yellow mr-2 mt-1"></i>
+                            <span>Up to 1 hour labor</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-trustvolt-yellow mr-2 mt-1"></i>
+                            <span>Diagnostic report</span>
+                        </li>
+                    </ul>
+                    <div class="text-center">
+                        <a href="#quote-form" class="inline-block bg-trustvolt-blue hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition w-full">
+                           
+                        </a>
+                        <a href="#" class="mt-4 inline-block text-trustvolt-blue hover:underline"></a>
+                    </div>
                 </div>
                 
-                <div class="bg-white p-6 rounded-lg shadow-md text-center">
-                    <div class="bg-secondary bg-opacity-10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-pound-sign text-secondary text-2xl"></i>
+                <!-- Silver Package -->
+                <div class="bg-white p-8 rounded-lg shadow-lg hover-lift transform scale-105 relative">
+                    <div class="absolute top-0 right-0 bg-trustvolt-yellow text-trustvolt-dark text-xs font-bold px-3 py-1 rounded-bl rounded-tr">
+                        MOST POPULAR
                     </div>
-                    <h3 class="text-xl font-bold text-dark mb-2">Fair Pricing</h3>
-                    <p class="text-gray-600">Upfront pricing with no hidden fees. We provide detailed quotes before any work begins.</p>
+                    <div class="text-center mb-6">
+                        <h3 class="font-heading text-2xl font-bold mb-2">Silver Package</h3>
+                        <div class="text-4xl font-bold text-trustvolt-blue mb-2">£249</div>
+                        <div class="text-gray-500">Full finding,diagnosis</div>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-trustvolt-yellow mr-2 mt-1"></i>
+                            <span>Complete rewiring service</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-trustvolt-yellow mr-2 mt-1"></i>
+                            <span>Lighting installation</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-trustvolt-yellow mr-2 mt-1"></i>
+                            <span>Full safety inspection</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-trustvolt-yellow mr-2 mt-1"></i>
+                            <span>Up to 4 hours labor</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-trustvolt-yellow mr-2 mt-1"></i>
+                            <span></span>
+                        </li>
+                    </ul>
+                    <div class="text-center">
+                        <a href="#quote-form" class="inline-block bg-trustvolt-yellow hover:bg-yellow-500 text-trustvolt-dark font-bold py-3 px-8 rounded-full transition w-full">
+                           
+                        </a>
+                        <a href="#" class="mt-4 inline-block text-trustvolt-blue hover:underline"></a>
+                    </div>
                 </div>
                 
-                <div class="bg-white p-6 rounded-lg shadow-md text-center">
-                    <div class="bg-secondary bg-opacity-10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-award text-secondary text-2xl"></i>
+                <!-- Gold Package -->
+                <div class="bg-white p-8 rounded-lg shadow-lg hover-lift">
+                    <div class="text-center mb-6">
+                        <h3 class="font-heading text-2xl font-bold mb-2">Gold Package</h3>
+                        <div class="text-4xl font-bold text-trustvolt-blue mb-2">£399</div>
+                        <div class="text-gray-500">Premium electrical upgrade</div>
                     </div>
-                    <h3 class="text-xl font-bold text-dark mb-2">Certified Experts</h3>
-                    <p class="text-gray-600">All our plumbers are Gas Safe registered and undergo continuous training on the latest techniques.</p>
-                </div>
-                
-                <div class="bg-white p-6 rounded-lg shadow-md text-center">
-                    <div class="bg-secondary bg-opacity-10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-shield-alt text-secondary text-2xl"></i>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-trustvolt-yellow mr-2 mt-1"></i>
+                            <span>Complete home electrical check</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-trustvolt-yellow mr-2 mt-1"></i>
+                            <span>Smart home setup</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-trustvolt-yellow mr-2 mt-1"></i>
+                            <span>Energy efficiency audit</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-trustvolt-yellow mr-2 mt-1"></i>
+                            <span>Up to 8 hours labor</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-trustvolt-yellow mr-2 mt-1"></i>
+                            <span>Premium certification</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-trustvolt-yellow mr-2 mt-1"></i>
+                            <span>12-month priority support</span>
+                        </li>
+                    </ul>
+                    <div class="text-center">
+                        <a href="#quote-form" class="inline-block bg-trustvolt-blue hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition w-full">
+                            
+                        </a>
+                        <a href="#" class="mt-4 inline-block text-trustvolt-blue hover:underline"></a>
                     </div>
-                    <h3 class="text-xl font-bold text-dark mb-2">Guaranteed Work</h3>
-                    <p class="text-gray-600">All our work comes with a 12-month guarantee. If there's an issue, we'll fix it at no extra cost.</p>
-                </div>
-                
-                <div class="bg-white p-6 rounded-lg shadow-md text-center">
-                    <div class="bg-secondary bg-opacity-10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-tools text-secondary text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-dark mb-2">Latest Equipment</h3>
-                    <p class="text-gray-600">We invest in state-of-the-art tools like CCTV drain cameras and thermal imaging for precise diagnostics.</p>
-                </div>
-                
-                <div class="bg-white p-6 rounded-lg shadow-md text-center">
-                    <div class="bg-secondary bg-opacity-10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-heart text-secondary text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-dark mb-2">Customer Focus</h3>
-                    <p class="text-gray-600">Rated 4.9/5 by our customers. Your satisfaction is our top priority from start to finish.</p>
                 </div>
             </div>
         </div>
     </section>
-    
-    <!-- Maintenance Packages -->
-    <section id="pricing" class="py-16 bg-white">
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
         <div class="container mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Preventative Maintenance Packages</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Save money and avoid emergencies with our comprehensive care plans</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                <!-- Silver Plan -->
-                <div class="package-card bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 hover:shadow-xl border-t-4 border-gray-300">
-                    <div class="bg-gray-100 py-6 px-4 text-center">
-                        <h3 class="text-2xl font-bold text-dark">Silver Care Plan</h3>
-                        <div class="mt-4">
-                            <span class="text-4xl font-bold text-primary">£129</span>
-                            <span class="text-gray-600">/year</span>
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="lg:w-1/2 mb-8 lg:mb-0 lg:pr-12">
+                    <h2 class="font-heading text-3xl md:text-4xl font-bold mb-6">Why Choose TrustVolt Electric?</h2>
+                    <p class="text-gray-600 mb-6">As a family-run business with over 10 years of experience, we take pride in delivering exceptional electrical services across the UK. Our team of certified electricians combines technical expertise with a commitment to customer satisfaction.</p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="bg-trustvolt-blue bg-opacity-10 p-2 rounded-full mr-4">
+                                <i class="fas fa-medal text-trustvolt-blue text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-heading font-bold mb-1">Certified Excellence</h4>
+                                <p class="text-gray-600">NICEIC certified with TrustMark accreditation for guaranteed quality.</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="p-6">
-                        <ul class="space-y-3 mb-6">
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-secondary mt-1 mr-2"></i>
-                                <span>Annual boiler service & safety check</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-secondary mt-1 mr-2"></i>
-                                <span>10% discount on all parts</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-secondary mt-1 mr-2"></i>
-                                <span>Standard response time</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-secondary mt-1 mr-2"></i>
-                                <span>Basic system health check</span>
-                            </li>
-                        </ul>
-                        <div class="space-y-3">
-                            <button class="w-full bg-primary hover:bg-opacity-90 text-white font-bold py-2 px-4 rounded">
-                                Join Now
-                            </button>
-                            <button class="w-full border border-primary text-primary hover:bg-gray-50 font-bold py-2 px-4 rounded">
-                                Email Me Details
-                            </button>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-trustvolt-blue bg-opacity-10 p-2 rounded-full mr-4">
+                                <i class="fas fa-clock text-trustvolt-blue text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-heading font-bold mb-1">24/7 Availability</h4>
+                                <p class="text-gray-600">Emergency services available round the clock when you need us most.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-trustvolt-blue bg-opacity-10 p-2 rounded-full mr-4">
+                                <i class="fas fa-pound-sign text-trustvolt-blue text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-heading font-bold mb-1">Upfront Pricing</h4>
+                                <p class="text-gray-600">No hidden fees - we provide clear quotes before any work begins.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Gold Plan -->
-                <div class="package-card bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 hover:shadow-xl border-t-4 border-secondary transform scale-105 z-10">
-                    <div class="bg-secondary bg-opacity-10 py-6 px-4 text-center relative">
-                        <div class="absolute top-0 right-0 bg-accent text-white text-xs font-bold px-3 py-1 transform translate-x-2 -translate-y-2">POPULAR</div>
-                        <h3 class="text-2xl font-bold text-dark">Gold Care Plan</h3>
-                        <div class="mt-4">
-                            <span class="text-4xl font-bold text-primary">£199</span>
-                            <span class="text-gray-600">/year</span>
+                <div class="lg:w-1/2">
+                    <div class="bg-gray-100 p-6 rounded-lg">
+                        <div class="aspect-w-16 aspect-h-9 mb-6">
+                            <img src="https://images.unsplash.com/photo-1605152276897-4f618f831968?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="TrustVolt electrician at work" class="rounded-lg shadow-lg w-full">
                         </div>
-                    </div>
-                    <div class="p-6">
-                        <ul class="space-y-3 mb-6">
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-secondary mt-1 mr-2"></i>
-                                <span>Everything in Silver, plus:</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-secondary mt-1 mr-2"></i>
-                                <span>Priority call-out (50% faster response)</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-secondary mt-1 mr-2"></i>
-                                <span>Free annual leak inspection</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-secondary mt-1 mr-2"></i>
-                                <span>15% discount on all parts</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-secondary mt-1 mr-2"></i>
-                                <span>Comprehensive system health check</span>
-                            </li>
-                        </ul>
-                        <div class="space-y-3">
-                            <button class="w-full bg-secondary hover:bg-opacity-90 text-white font-bold py-2 px-4 rounded">
-                                Join Now
-                            </button>
-                            <button class="w-full border border-secondary text-secondary hover:bg-gray-50 font-bold py-2 px-4 rounded">
-                                Email Me Details
-                            </button>
+                        
+                        <div class="flex flex-wrap -mx-2">
+                            <div class="w-1/2 px-2 mb-4">
+                                <div class="bg-white p-4 rounded-lg shadow-sm text-center">
+                                    <div class="text-3xl font-bold text-trustvolt-blue mb-1">15+</div>
+                                    <div class="text-gray-600 text-sm">Years Experience</div>
+                                </div>
+                            </div>
+                            <div class="w-1/2 px-2 mb-4">
+                                <div class="bg-white p-4 rounded-lg shadow-sm text-center">
+                                    <div class="text-3xl font-bold text-trustvolt-blue mb-1">+</div>
+                                    <div class="text-gray-600 text-sm">Happy Customers</div>
+                                </div>
+                            </div>
+                            <div class="w-1/2 px-2">
+                                <div class="bg-white p-4 rounded-lg shadow-sm text-center">
+                                    <div class="text-3xl font-bold text-trustvolt-blue mb-1">24/7</div>
+                                    <div class="text-gray-600 text-sm">Emergency Service</div>
+                                </div>
+                            </div>
+                            <div class="w-1/2 px-2">
+                                <div class="bg-white p-4 rounded-lg shadow-sm text-center">
+                                    <div class="text-3xl font-bold text-trustvolt-blue mb-1">12</div>
+                                    <div class="text-gray-600 text-sm">Month Guarantee</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Platinum Plan -->
-                <div class="package-card bg-white rounded-xl shadow-lg overflow-hidden transition duration-300 hover:shadow-xl border-t-4 border-accent">
-                    <div class="bg-accent bg-opacity-10 py-6 px-4 text-center">
-                        <h3 class="text-2xl font-bold text-dark">Platinum Peace Plan</h3>
-                        <div class="mt-4">
-                            <span class="text-4xl font-bold text-primary">£299</span>
-                            <span class="text-gray-600">/year</span>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <ul class="space-y-3 mb-6">
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-secondary mt-1 mr-2"></i>
-                                <span>Everything in Gold, plus:</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-secondary mt-1 mr-2"></i>
-                                <span>Full drain revamp & cleaning</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-secondary mt-1 mr-2"></i>
-                                <span>Smart leak sensor installation</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-secondary mt-1 mr-2"></i>
-                                <span>24/7 monitoring alerts</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-secondary mt-1 mr-2"></i>
-                                <span>20% discount on all parts</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-secondary mt-1 mr-2"></i>
-                                <span>VIP emergency response</span>
-                            </li>
-                        </ul>
-                        <div class="space-y-3">
-                            <button class="w-full bg-accent hover:bg-opacity-90 text-white font-bold py-2 px-4 rounded">
-                                Join Now
-                            </button>
-                            <button class="w-full border border-accent text-accent hover:bg-gray-50 font-bold py-2 px-4 rounded">
-                                Email Me Details
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="mt-12 text-center">
-                <p class="text-gray-600 mb-4">Not sure which plan is right for you?</p>
-                <button class="bg-primary hover:bg-opacity-90 text-white font-bold px-6 py-3 rounded-lg">
-                    <i class="fas fa-phone mr-2"></i> Speak to Our Team
-                </button>
             </div>
         </div>
     </section>
-    
-    <!-- Testimonials -->
-    <section class="py-16 bg-gray-50">
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-16 bg-gray-100">
         <div class="container mx-auto px-4">
             <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">What Our Customers Say</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Don't just take our word for it - hear from homeowners and businesses we've helped</p>
+                <h2 class="font-heading text-3xl md:text-4xl font-bold mb-4">What Our Customers Say</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Don't just take our word for it - hear from homeowners and businesses we've helped across the UK.</p>
             </div>
             
-            <div class="relative max-w-4xl mx-auto">
-                <!-- Testimonial Carousel -->
-                <div class="overflow-hidden">
-                    <div id="testimonial-carousel" class="flex transition-transform duration-300">
-                        <!-- Testimonial 1 -->
-                        <div class="min-w-full px-4">
-                            <div class="bg-white p-8 rounded-lg shadow-md">
-                                <div class="flex items-center mb-4">
-                                    <div class="flex">
-                                        <i class="fas fa-star text-yellow-400"></i>
-                                        <i class="fas fa-star text-yellow-400"></i>
-                                        <i class="fas fa-star text-yellow-400"></i>
-                                        <i class="fas fa-star text-yellow-400"></i>
-                                        <i class="fas fa-star text-yellow-400"></i>
-                                    </div>
-                                    <span class="text-gray-500 ml-2">2 days ago</span>
-                                </div>
-                                <p class="text-gray-700 mb-6">"AquaPro saved us from a complete disaster when our basement flooded at 3am. Their emergency team arrived within 45 minutes and worked through the night to fix the burst pipe and dry out the area. Professional, efficient, and surprisingly affordable for emergency work."</p>
-                                <div class="flex items-center">
-                                    <div class="bg-gray-200 w-12 h-12 rounded-full flex items-center justify-center mr-4">
-                                        <i class="fas fa-user text-gray-500 text-xl"></i>
-                                    </div>
-                                    <div>
-                                        <h4 class="font-bold text-dark">Emma T.</h4>
-                                        <p class="text-gray-500">Brighton</p>
-                                    </div>
-                                </div>
-                            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white p-6 rounded-lg shadow hover-lift">
+                    <div class="flex items-center mb-4">
+                        <div class="flex -space-x-2">
+                            <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Sarah J." class="w-12 h-12 rounded-full border-2 border-white">
                         </div>
-                        
-                        <!-- Testimonial 2 -->
-                        <div class="min-w-full px-4">
-                            <div class="bg-white p-8 rounded-lg shadow-md">
-                                <div class="flex items-center mb-4">
-                                    <div class="flex">
-                                        <i class="fas fa-star text-yellow-400"></i>
-                                        <i class="fas fa-star text-yellow-400"></i>
-                                        <i class="fas fa-star text-yellow-400"></i>
-                                        <i class="fas fa-star text-yellow-400"></i>
-                                        <i class="fas fa-star text-yellow-400"></i>
-                                    </div>
-                                    <span class="text-gray-500 ml-2">1 week ago</span>
-                                </div>
-                                <p class="text-gray-700 mb-6">"After three plumbers couldn't find the source of our mysterious leak, AquaPro's thermal imaging equipment pinpointed it in under an hour. Their no-leak guarantee gave us peace of mind, and their pricing was transparent from the start. Will definitely use them for all our plumbing needs."</p>
-                                <div class="flex items-center">
-                                    <div class="bg-gray-200 w-12 h-12 rounded-full flex items-center justify-center mr-4">
-                                        <i class="fas fa-user text-gray-500 text-xl"></i>
-                                    </div>
-                                    <div>
-                                        <h4 class="font-bold text-dark">James L.</h4>
-                                        <p class="text-gray-500">London</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Testimonial 3 -->
-                        <div class="min-w-full px-4">
-                            <div class="bg-white p-8 rounded-lg shadow-md">
-                                <div class="flex items-center mb-4">
-                                    <div class="flex">
-                                        <i class="fas fa-star text-yellow-400"></i>
-                                        <i class="fas fa-star text-yellow-400"></i>
-                                        <i class="fas fa-star text-yellow-400"></i>
-                                        <i class="fas fa-star text-yellow-400"></i>
-                                        <i class="fas fa-star text-yellow-400"></i>
-                                    </div>
-                                    <span class="text-gray-500 ml-2">3 weeks ago</span>
-                                </div>
-                                <p class="text-gray-700 mb-6">"The Gold Care Plan has been worth every penny. Our annual service identified a potentially dangerous gas leak we didn't know about, and their priority call-out meant we didn't have to wait days without heating in winter. The team is always polite and leaves everything spotless."</p>
-                                <div class="flex items-center">
-                                    <div class="bg-gray-200 w-12 h-12 rounded-full flex items-center justify-center mr-4">
-                                        <i class="fas fa-user text-gray-500 text-xl"></i>
-                                    </div>
-                                    <div>
-                                        <h4 class="font-bold text-dark">Sarah K.</h4>
-                                        <p class="text-gray-500">Manchester</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Carousel Controls -->
-                <button id="prev-testimonial" class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-white shadow-md rounded-full w-10 h-10 flex items-center justify-center text-primary hover:bg-gray-100">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <button id="next-testimonial" class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-white shadow-md rounded-full w-10 h-10 flex items-center justify-center text-primary hover:bg-gray-100">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
-            </div>
-            
-            <!-- Google Reviews -->
-            <div class="mt-12 bg-white rounded-lg shadow-md p-6 max-w-4xl mx-auto">
-                <div class="flex flex-col md:flex-row items-center justify-between">
-                    <div class="flex items-center mb-4 md:mb-0">
-                        <div class="bg-yellow-400 text-white rounded-full w-12 h-12 flex items-center justify-center mr-4">
-                            <i class="fab fa-google text-xl"></i>
-                        </div>
-                        <div>
-                            <h3 class="font-bold text-dark">Google Reviews</h3>
+                        <div class="ml-4">
+                            <h4 class="font-heading font-bold">Sarah J.</h4>
                             <div class="flex items-center">
-                                <div class="flex mr-2">
-                                    <i class="fas fa-star text-yellow-400"></i>
-                                    <i class="fas fa-star text-yellow-400"></i>
-                                    <i class="fas fa-star text-yellow-400"></i>
-                                    <i class="fas fa-star text-yellow-400"></i>
-                                    <i class="fas fa-star text-yellow-400"></i>
+                                <div class="flex text-trustvolt-yellow">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
                                 </div>
-                                <span class="text-gray-600">4.9/5 from 247 reviews</span>
+                                <span class="ml-2 text-gray-600 text-sm">London</span>
                             </div>
                         </div>
                     </div>
-                    <a href="#" class="bg-primary hover:bg-opacity-90 text-white font-bold px-4 py-2 rounded">
-                        <i class="fas fa-plus mr-2"></i> Write a Review
+                    <p class="text-gray-600 mb-4">"TrustVolt completely rewired our Victorian home. They were professional, tidy, and completed the work ahead of schedule. The team explained everything clearly and the pricing was exactly as quoted."</p>
+                    <div class="text-sm text-gray-500">Posted 2 weeks ago</div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-white p-6 rounded-lg shadow hover-lift">
+                    <div class="flex items-center mb-4">
+                        <div class="flex -space-x-2">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael T." class="w-12 h-12 rounded-full border-2 border-white">
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-heading font-bold">Michael T.</h4>
+                            <div class="flex items-center">
+                                <div class="flex text-trustvolt-yellow">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="ml-2 text-gray-600 text-sm">Manchester</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">"When our office had an electrical emergency at 10pm, TrustVolt had an electrician to us within 45 minutes. They diagnosed and fixed the issue quickly, allowing us to reopen the next morning. Incredible service!"</p>
+                    <div class="text-sm text-gray-500">Posted 1 month ago</div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-white p-6 rounded-lg shadow hover-lift">
+                    <div class="flex items-center mb-4">
+                        <div class="flex -space-x-2">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Emma R." class="w-12 h-12 rounded-full border-2 border-white">
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-heading font-bold">Emma R.</h4>
+                            <div class="flex items-center">
+                                <div class="flex text-trustvolt-yellow">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="ml-2 text-gray-600 text-sm">Birmingham</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">"The team installed our EV charger and handled all the paperwork for the government grant. They were knowledgeable, efficient, and left everything spotless. Will definitely use them for all our electrical needs."</p>
+                    <div class="text-sm text-gray-500">Posted 3 weeks ago</div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <div class="inline-flex items-center bg-white px-6 py-3 rounded-full shadow">
+                    <div class="flex items-center mr-4">
+                        <i class="fab fa-google text-trustvolt-blue text-2xl mr-2"></i>
+                        <div>
+                            <div class="flex items-center">
+                                <div class="flex text-trustvolt-yellow">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <span class="ml-2 font-bold">4.8</span>
+                            </div>
+                            <div class="text-xs text-gray-600">from 247 reviews</div>
+                        </div>
+                    </div>
+                    <a href="#" class="bg-trustvolt-blue hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-full transition">
+                        Read More Reviews
                     </a>
                 </div>
             </div>
         </div>
     </section>
-    
-    <!-- Service Area -->
-    <section class="py-16 bg-white">
+
+    <!-- Accreditation Section -->
+    <section class="py-12 bg-white">
         <div class="container mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Our Service Areas</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Serving homes and businesses across the South East and beyond</p>
+            <div class="text-center mb-8">
+                <h3 class="font-heading text-2xl font-bold mb-2">Our Accreditations</h3>
+                <p class="text-gray-600">Quality and safety are our top priorities</p>
             </div>
             
-            <div class="bg-gray-50 rounded-xl p-6 md:p-8">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div>
-                        <h3 class="text-xl font-bold text-dark mb-4">Covering These Locations:</h3>
-                        <div class="grid grid-cols-2 gap-4">
-                            <ul class="space-y-2 text-gray-600">
-                                <li class="flex items-center"><i class="fas fa-map-marker-alt text-secondary mr-2"></i> London</li>
-                                <li class="flex items-center"><i class="fas fa-map-marker-alt text-secondary mr-2"></i> Brighton</li>
-                                <li class="flex items-center"><i class="fas fa-map-marker-alt text-secondary mr-2"></i> Croydon</li>
-                                <li class="flex items-center"><i class="fas fa-map-marker-alt text-secondary mr-2"></i> Guildford</li>
-                            </ul>
-                            <ul class="space-y-2 text-gray-600">
-                                <li class="flex items-center"><i class="fas fa-map-marker-alt text-secondary mr-2"></i> Reading</li>
-                                <li class="flex items-center"><i class="fas fa-map-marker-alt text-secondary mr-2"></i> Oxford</li>
-                                <li class="flex items-center"><i class="fas fa-map-marker-alt text-secondary mr-2"></i> Southampton</li>
-                                <li class="flex items-center"><i class="fas fa-map-marker-alt text-secondary mr-2"></i> Portsmouth</li>
-                            </ul>
-                        </div>
-                        <p class="mt-4 text-gray-600">And surrounding areas within 50 miles. Call to check if we cover your location.</p>
-                    </div>
-                    
-                    <div class="bg-gray-200 rounded-lg overflow-hidden">
-                        <!-- Simple map representation -->
-                        <div class="h-full flex items-center justify-center p-4">
-                            <div class="relative w-full h-64">
-                                <!-- London marker -->
-                                <div class="absolute top-1/4 left-1/4">
-                                    <div class="bg-secondary text-white rounded-full w-8 h-8 flex items-center justify-center animate-float">
-                                        <i class="fas fa-map-pin"></i>
-                                    </div>
-                                </div>
-                                <!-- Brighton marker -->
-                                <div class="absolute top-1/2 left-1/3">
-                                    <div class="bg-secondary text-white rounded-full w-8 h-8 flex items-center justify-center animate-float" style="animation-delay: 0.5s;">
-                                        <i class="fas fa-map-pin"></i>
-                                    </div>
-                                </div>
-                                <!-- Other markers -->
-                                <div class="absolute top-1/3 right-1/4">
-                                    <div class="bg-secondary text-white rounded-full w-8 h-8 flex items-center justify-center animate-float" style="animation-delay: 1s;">
-                                        <i class="fas fa-map-pin"></i>
-                                    </div>
-                                </div>
-                                <div class="absolute bottom-1/4 left-1/2">
-                                    <div class="bg-secondary text-white rounded-full w-8 h-8 flex items-center justify-center animate-float" style="animation-delay: 1.5s;">
-                                        <i class="fas fa-map-pin"></i>
-                                    </div>
-                                </div>
-                                <div class="absolute top-1/2 right-1/3">
-                                    <div class="bg-secondary text-white rounded-full w-8 h-8 flex items-center justify-center animate-float" style="animation-delay: 2s;">
-                                        <i class="fas fa-map-pin"></i>
-                                    </div>
-                                </div>
-                                <div class="absolute top-1/4 right-1/4">
-                                    <div class="bg-accent text-white rounded-full w-8 h-8 flex items-center justify-center animate-pulse-slow">
-                                        <i class="fas fa-home"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16">
+                <img src="https://www.niceic.com/images/default-source/default-album/niceic-logo.png" alt="NICEIC Certified" class="h-12 md:h-16 opacity-80 hover:opacity-100 transition">
+                <img src="https://www.trustmark.org.uk/wp-content/uploads/2021/03/TrustMark-logo-RGB.png" alt="TrustMark Accredited" class="h-12 md:h-16 opacity-80 hover:opacity-100 transition">
+                <img src="https://www.cityandguilds.com/-/media/project/city-and-guilds/rebrand-refresh/logo/city-and-guilds-logo.svg" alt="City & Guilds" class="h-12 md:h-16 opacity-80 hover:opacity-100 transition">
+                <img src="https://www.electricalsafetyfirst.org.uk/media/2183/esc-logo.png" alt="Electrical Safety Certified" class="h-12 md:h-16 opacity-80 hover:opacity-100 transition">
+            </div>
+            
+            <div class="mt-12 text-center">
+                <div class="inline-flex items-center bg-gray-100 px-6 py-4 rounded-lg">
+                    <i class="fas fa-shield-alt text-trustvolt-blue text-2xl mr-4"></i>
+                    <div class="text-left">
+                        <div class="font-heading font-bold">12-Month Workmanship Guarantee</div>
+                        <div class="text-sm text-gray-600">All our work comes with a full guarantee for your peace of mind</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    
+
     <!-- Blog Section -->
-    <section class="py-16 bg-gray-50">
+    <section class="py-16 bg-gray-100">
         <div class="container mx-auto px-4">
             <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Plumbing Tips & Resources</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Expert advice to help you maintain your plumbing system</p>
+                <h2 class="font-heading text-3xl md:text-4xl font-bold mb-4">Electrical Tips & Resources</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Learn more about electrical safety, energy efficiency, and smart home technology.</p>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Blog Post 1 -->
-                <div class="bg-white rounded-xl shadow-md overflow-hidden transition duration-300 hover:shadow-lg">
-                    <div class="h-48 bg-gradient-to-r from-primary to-secondary flex items-center justify-center">
-                        <i class="fas fa-exclamation-triangle text-white text-5xl"></i>
-                    </div>
+                <div class="bg-white rounded-lg overflow-hidden shadow hover-lift">
+                    <img src="https://images.unsplash.com/photo-1605106702734-205df224ecce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Emergency electrical issues" class="w-full h-48 object-cover">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-dark mb-3">5 Early Signs of a Burst Pipe & What to Do</h3>
-                        <p class="text-gray-600 mb-4">Learn to recognize the subtle warning signs of pipe failure before disaster strikes and know the immediate steps to minimize damage.</p>
-                        <a href="#" class="text-secondary font-medium hover:underline flex items-center">
+                        <h3 class="font-heading text-xl font-bold mb-3">5 Emergency Electrical Issues You Should Never Ignore</h3>
+                        <p class="text-gray-600 mb-4">Learn which electrical problems require immediate attention to prevent fires, shocks, or costly damage to your home's electrical system.</p>
+                        <a href="#" class="text-trustvolt-blue font-bold hover:underline flex items-center">
                             Read More <i class="fas fa-arrow-right ml-2"></i>
                         </a>
                     </div>
                 </div>
                 
                 <!-- Blog Post 2 -->
-                <div class="bg-white rounded-xl shadow-md overflow-hidden transition duration-300 hover:shadow-lg">
-                    <div class="h-48 bg-gradient-to-r from-secondary to-accent flex items-center justify-center">
-                        <i class="fas fa-snowflake text-white text-5xl"></i>
-                    </div>
+                <div class="bg-white rounded-lg overflow-hidden shadow hover-lift">
+                    <img src="https://images.unsplash.com/photo-1485125639709-a60c3a500bf1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Energy saving tips" class="w-full h-48 object-cover">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-dark mb-3">How to Prep Your Home for Winter Plumbing</h3>
-                        <p class="text-gray-600 mb-4">Essential winterization checklist to protect your pipes from freezing and avoid costly emergency repairs during cold snaps.</p>
-                        <a href="#" class="text-secondary font-medium hover:underline flex items-center">
+                        <h3 class="font-heading text-xl font-bold mb-3">How to Slash Your Energy Bills with Simple Upgrades</h3>
+                        <p class="text-gray-600 mb-4">Discover the most effective electrical upgrades that can significantly reduce your energy consumption and lower your monthly bills.</p>
+                        <a href="#" class="text-trustvolt-blue font-bold hover:underline flex items-center">
                             Read More <i class="fas fa-arrow-right ml-2"></i>
                         </a>
                     </div>
                 </div>
                 
                 <!-- Blog Post 3 -->
-                <div class="bg-white rounded-xl shadow-md overflow-hidden transition duration-300 hover:shadow-lg">
-                    <div class="h-48 bg-gradient-to-r from-accent to-primary flex items-center justify-center">
-                        <i class="fas fa-fire text-white text-5xl"></i>
-                    </div>
+                <div class="bg-white rounded-lg overflow-hidden shadow hover-lift">
+                    <img src="https://images.unsplash.com/photo-1558002038-1055897befb1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Smart home wiring" class="w-full h-48 object-cover">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-dark mb-3">Benefits of a Pre-Season Boiler Service</h3>
-                        <p class="text-gray-600 mb-4">Discover why scheduling your boiler check before winter arrives can improve efficiency, prevent breakdowns, and may be required by your warranty.</p>
-                        <a href="#" class="text-secondary font-medium hover:underline flex items-center">
+                        <h3 class="font-heading text-xl font-bold mb-3">Smart Home Tips: Wiring Your Home for the Future</h3>
+                        <p class="text-gray-600 mb-4">Future-proof your home with these essential wiring considerations for smart lighting, security systems, and home automation.</p>
+                        <a href="#" class="text-trustvolt-blue font-bold hover:underline flex items-center">
                             Read More <i class="fas fa-arrow-right ml-2"></i>
                         </a>
                     </div>
                 </div>
             </div>
             
-            <div class="mt-12 text-center">
-                <a href="#" class="bg-primary hover:bg-opacity-90 text-white font-bold px-6 py-3 rounded-lg inline-block">
-                    View All Articles <i class="fas fa-arrow-right ml-2"></i>
-                </a>
+            <div class="text-center mt-12">
             </div>
         </div>
     </section>
-    
+
     <!-- Contact Section -->
-    <section id="contact" class="py-16 bg-white">
+    <section id="contact" class="py-16 bg-trustvolt-dark text-white">
         <div class="container mx-auto px-4">
             <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Get in Touch</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Ready to solve your plumbing problems? Contact us today.</p>
+                <h2 class="font-heading text-3xl md:text-4xl font-bold mb-4">Get in Touch</h2>
+                <p class="text-gray-300 max-w-2xl mx-auto">Ready to discuss your electrical needs? Contact us today for a free consultation.</p>
             </div>
             
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-                <!-- Contact Form -->
-                <div class="bg-gray-50 rounded-xl p-6 md:p-8 shadow-md">
-                    <h3 class="text-2xl font-bold text-dark mb-6">Send Us a Message</h3>
-                    <form class="space-y-4">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="flex flex-col lg:flex-row gap-12">
+                <div class="lg:w-1/2">
+                    <form class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
-                                <label for="contact-name" class="block text-dark mb-1">Full Name*</label>
-                                <input type="text" id="contact-name" required class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-secondary">
+                                <label for="name" class="block mb-2">Your Name</label>
+                                <input type="text" id="name" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-trustvolt-yellow">
                             </div>
                             <div>
-                                <label for="contact-phone" class="block text-dark mb-1">Phone Number*</label>
-                                <input type="tel" id="contact-phone" required class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-secondary">
+                                <label for="email" class="block mb-2">Email Address</label>
+                                <input type="email" id="email" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-trustvolt-yellow">
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="phone" class="block mb-2">Phone Number</label>
+                                <input type="tel" id="phone" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-trustvolt-yellow">
+                            </div>
+                            <div>
+                                <label for="postcode" class="block mb-2">Postcode</label>
+                                <input type="text" id="postcode" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-trustvolt-yellow">
                             </div>
                         </div>
                         <div>
-                            <label for="contact-email" class="block text-dark mb-1">Email Address*</label>
-                            <input type="email" id="contact-email" required class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-secondary">
-                        </div>
-                        <div>
-                            <label for="contact-postcode" class="block text-dark mb-1">Postcode*</label>
-                            <input type="text" id="contact-postcode" required class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-secondary">
-                        </div>
-                        <div>
-                            <label for="contact-service" class="block text-dark mb-1">Service Needed*</label>
-                            <select id="contact-service" required class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-secondary">
+                            <label for="service" class="block mb-2">Service Needed</label>
+                            <select id="service" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-trustvolt-yellow">
                                 <option value="">Select a service</option>
-                                <option value="emergency">Emergency Plumbing</option>
-                                <option value="boiler">Boiler Service/Repair</option>
-                                <option value="drain">Drain Unblocking</option>
-                                <option value="leak">Leak Detection/Repair</option>
-                                <option value="installation">Installation</option>
-                                <option value="other">Other</option>
+                                <option>Emergency Electrical</option>
+                                <option>Residential Wiring</option>
+                                <option>Commercial Electrical</option>
+                                <option>EV Charger Installation</option>
+                                <option>Other</option>
                             </select>
                         </div>
                         <div>
-                            <label for="contact-message" class="block text-dark mb-1">Message</label>
-                            <textarea id="contact-message" rows="4" class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-secondary"></textarea>
+                            <label for="message" class="block mb-2">Message</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-trustvolt-yellow"></textarea>
                         </div>
-                        <button type="submit" class="w-full bg-secondary hover:bg-opacity-90 text-white font-bold py-3 rounded-lg">
-                            Send Message <i class="fas fa-paper-plane ml-2"></i>
+                        <button type="submit" class="w-full bg-trustvolt-yellow hover:bg-yellow-500 text-trustvolt-dark font-bold py-3 px-6 rounded transition">
+                            Send Message
                         </button>
                     </form>
                 </div>
                 
-                <!-- Contact Info -->
-                <div>
-                    <div class="bg-primary text-white rounded-xl p-6 md:p-8 mb-6">
-                        <h3 class="text-2xl font-bold mb-4">Emergency Plumbing</h3>
-                        <p class="mb-6">For urgent plumbing issues, call our 24/7 emergency hotline for immediate assistance.</p>
-                        <a href="tel:+447890123456" class="bg-white hover:bg-gray-100 text-primary font-bold px-6 py-3 rounded-lg text-lg inline-block">
-                            <i class="fas fa-phone mr-2"></i> Call +44 7890 123456
-                        </a>
-                    </div>
-                    
-                    <div class="bg-gray-50 rounded-xl p-6 md:p-8 shadow-md">
-                        <h3 class="text-2xl font-bold text-dark mb-4">Contact Information</h3>
-                        <div class="space-y-4">
+                <div class="lg:w-1/2">
+                    <div class="bg-gray-800 p-8 rounded-lg h-full">
+                        <h3 class="font-heading text-2xl font-bold mb-6">Contact Information</h3>
+                        
+                        <div class="space-y-6">
                             <div class="flex items-start">
-                                <div class="bg-secondary bg-opacity-10 rounded-full w-10 h-10 flex items-center justify-center mr-4 mt-1">
-                                    <i class="fas fa-map-marker-alt text-secondary"></i>
+                                <div class="bg-trustvolt-blue bg-opacity-20 p-3 rounded-full mr-4">
+                                    <i class="fas fa-phone text-trustvolt-blue text-xl"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-bold text-dark">Office Address</h4>
-                                    <p class="text-gray-600">123 Waterway Road<br>London, SE1 8TP</p>
+                                    <h4 class="font-heading font-bold mb-1">Call Us</h4>
+                                    <a href="tel:+441234567890" class="text-gray-300 hover:text-trustvolt-yellow transition">+44 1234 567 890</a>
+                                    <p class="text-sm text-gray-400 mt-1">24/7 emergency line available</p>
                                 </div>
                             </div>
+                            
                             <div class="flex items-start">
-                                <div class="bg-secondary bg-opacity-10 rounded-full w-10 h-10 flex items-center justify-center mr-4 mt-1">
-                                    <i class="fas fa-envelope text-secondary"></i>
+                                <div class="bg-trustvolt-blue bg-opacity-20 p-3 rounded-full mr-4">
+                                    <i class="fas fa-envelope text-trustvolt-blue text-xl"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-bold text-dark">Email Us</h4>
-                                    <a href="mailto:info@aquaproplumbers.co.uk" class="text-secondary hover:underline">info@aquaproplumbers.co.uk</a>
+                                    <h4 class="font-heading font-bold mb-1">Email Us</h4>
+                                    <a href="mailto:info@trustvoltelectric.co.uk" class="text-gray-300 hover:text-trustvolt-yellow transition">info@trustvoltelectric.co.uk</a>
+                                    <p class="text-sm text-gray-400 mt-1">Typically respond within 1 business day</p>
                                 </div>
                             </div>
+                            
                             <div class="flex items-start">
-                                <div class="bg-secondary bg-opacity-10 rounded-full w-10 h-10 flex items-center justify-center mr-4 mt-1">
-                                    <i class="fas fa-clock text-secondary"></i>
+                                <div class="bg-trustvolt-blue bg-opacity-20 p-3 rounded-full mr-4">
+                                    <i class="fas fa-map-marker-alt text-trustvolt-blue text-xl"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-bold text-dark">Business Hours</h4>
-                                    <p class="text-gray-600">Monday-Friday: 8am-6pm<br>Saturday: 9am-4pm<br>Emergency: 24/7</p>
+                                    <h4 class="font-heading font-bold mb-1">Our Office</h4>
+                                    <p class="text-gray-300">123 Electric Avenue<br>London, EC1A 1BB</p>
+                                    <p class="text-sm text-gray-400 mt-1">By appointment only</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-trustvolt-blue bg-opacity-20 p-3 rounded-full mr-4">
+                                    <i class="fas fa-clock text-trustvolt-blue text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-heading font-bold mb-1">Business Hours</h4>
+                                    <p class="text-gray-300">Monday - Friday: 8am - 6pm<br>Saturday: 9am - 4pm<br>Sunday: Emergency calls only</p>
                                 </div>
                             </div>
                         </div>
                         
-                        <div class="mt-6 pt-6 border-t border-gray-200">
-                            <h4 class="font-bold text-dark mb-3">Follow Us</h4>
+                        <div class="mt-8">
+                            <h4 class="font-heading font-bold mb-4">Connect With Us</h4>
                             <div class="flex space-x-4">
-                                <a href="#" class="bg-gray-200 hover:bg-primary hover:text-white text-dark w-10 h-10 rounded-full flex items-center justify-center transition">
+                                <a href="#" class="bg-gray-700 hover:bg-trustvolt-blue text-white w-10 h-10 rounded-full flex items-center justify-center transition">
                                     <i class="fab fa-facebook-f"></i>
                                 </a>
-                                <a href="#" class="bg-gray-200 hover:bg-primary hover:text-white text-dark w-10 h-10 rounded-full flex items-center justify-center transition">
+                                <a href="#" class="bg-gray-700 hover:bg-trustvolt-blue text-white w-10 h-10 rounded-full flex items-center justify-center transition">
                                     <i class="fab fa-twitter"></i>
                                 </a>
-                                <a href="#" class="bg-gray-200 hover:bg-primary hover:text-white text-dark w-10 h-10 rounded-full flex items-center justify-center transition">
+                                <a href="#" class="bg-gray-700 hover:bg-trustvolt-blue text-white w-10 h-10 rounded-full flex items-center justify-center transition">
                                     <i class="fab fa-instagram"></i>
                                 </a>
-                                <a href="#" class="bg-gray-200 hover:bg-primary hover:text-white text-dark w-10 h-10 rounded-full flex items-center justify-center transition">
+                                <a href="#" class="bg-gray-700 hover:bg-trustvolt-blue text-white w-10 h-10 rounded-full flex items-center justify-center transition">
                                     <i class="fab fa-linkedin-in"></i>
                                 </a>
                             </div>
@@ -1013,231 +994,150 @@
             </div>
         </div>
     </section>
-    
-    <!-- Promo Bar -->
-    <div class="promo-bar bg-accent text-white py-3 px-4 shadow-lg">
-        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between">
-            <p class="font-bold mb-2 md:mb-0 text-center md:text-left">Emergency Call-out £49 (Reg. £75) – 24/7 Availability</p>
-            <a href="tel:+447890123456" class="bg-white hover:bg-gray-100 text-accent font-bold px-4 py-2 rounded whitespace-nowrap">
-                <i class="fas fa-phone mr-2"></i> Call Now
+
+    <!-- Map Section -->
+    <div class="h-96 bg-gray-200">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d158858.182370726!2d-0.10159865000000001!3d51.52864165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a00baf21de75%3A0x52963a5addd52a99!2sLondon!5e0!3m2!1sen!2suk!4v1686754300156!5m2!1sen!2suk" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <!-- Sticky Contact Bar -->
+    <div class="sticky-contact-bar bg-trustvolt-dark text-white py-3 px-4 shadow-lg">
+        <div class="container mx-auto flex flex-wrap items-center justify-between">
+            <div class="flex items-center">
+                <a href="tel:+441234567890" class="flex items-center mr-4 hover:text-trustvolt-yellow transition">
+                    <i class="fas fa-phone mr-2"></i> +44 07983699865
+                </a>
+                <a href="mailto:info@trustvoltelectric.co.uk" class="flex items-center hover:text-trustvolt-yellow transition">
+                    <i class="fas fa-envelope mr-2"></i> trustvoltelectric.co.uk
+                </a>
+            </div>
+            <a href="#quote-form" class="bg-trustvolt-yellow hover:bg-yellow-500 text-trustvolt-dark font-bold py-2 px-4 rounded transition">
+                <i class="fas fa-bolt mr-1"></i> Get a Quote
             </a>
         </div>
     </div>
-    
-    <!-- Chat Widget -->
-    <div id="chat-widget" class="chat-widget bg-white rounded-lg shadow-xl overflow-hidden w-72">
-        <div class="bg-primary text-white px-4 py-3 flex justify-between items-center">
-            <h3 class="font-bold">Chat with Us</h3>
-            <button id="close-chat" class="text-white hover:text-gray-200">
-                <i class="fas fa-times"></i>
-            </button>
-        </div>
-        <div class="p-4">
-            <div class="bg-gray-100 rounded-lg p-3 mb-3">
-                <p class="text-sm">Hi there! How can we help you today?</p>
-            </div>
-            <div class="space-y-2 max-h-60 overflow-y-auto mb-4">
-                <!-- Chat messages would go here -->
-            </div>
-            <div class="flex">
-                <input type="text" placeholder="Type your message..." class="flex-1 border rounded-l-lg px-3 py-2 focus:outline-none focus:ring-1 focus:ring-secondary">
-                <button class="bg-secondary hover:bg-opacity-90 text-white px-3 py-2 rounded-r-lg">
-                    <i class="fas fa-paper-plane"></i>
-                </button>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Chat Button -->
-    <button id="open-chat" class="fixed bottom-6 right-6 bg-secondary hover:bg-opacity-90 text-white rounded-full w-14 h-14 flex items-center justify-center shadow-xl z-30">
-        <i class="fas fa-comment-dots text-xl"></i>
-    </button>
-    
+
     <!-- Footer -->
-    <footer class="bg-dark text-white py-12">
+    <footer class="bg-gray-900 text-gray-400 py-12">
         <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div>
-                    <a href="#" class="flex items-center mb-4">
-                        <div class="bg-secondary text-white rounded-full w-10 h-10 flex items-center justify-center mr-3">
-                            <i class="fas fa-tint text-xl"></i>
-                        </div>
-                        <span class="font-heading font-bold text-xl">AquaPro<span class="text-secondary">Plumbers</span></span>
-                    </a>
-                    <p class="text-gray-400 mb-4">Precision Plumbing. Lasting Peace of Mind.</p>
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-bolt text-trustvolt-yellow text-2xl mr-2"></i>
+                        <span class="font-heading text-xl font-bold text-white">TrustVolt Electric</span>
+                    </div>
+                    <p class="mb-4">UK's most trusted electricians providing reliable, high-quality electrical services for homes and businesses.</p>
                     <div class="flex space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-white">
+                        <a href="#" class="text-gray-400 hover:text-trustvolt-yellow transition">
                             <i class="fab fa-facebook-f"></i>
                         </a>
-                        <a href="#" class="text-gray-400 hover:text-white">
+                        <a href="#" class="text-gray-400 hover:text-trustvolt-yellow transition">
                             <i class="fab fa-twitter"></i>
                         </a>
-                        <a href="#" class="text-gray-400 hover:text-white">
+                        <a href="#" class="text-gray-400 hover:text-trustvolt-yellow transition">
                             <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-white">
-                            <i class="fab fa-linkedin-in"></i>
                         </a>
                     </div>
                 </div>
                 
                 <div>
-                    <h3 class="font-bold text-lg mb-4">Services</h3>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="#" class="hover:text-white">Residential Plumbing</a></li>
-                        <li><a href="#" class="hover:text-white">Commercial Plumbing</a></li>
-                        <li><a href="#" class="hover:text-white">Heating & Boilers</a></li>
-                        <li><a href="#" class="hover:text-white">Drainage & Waste</a></li>
-                        <li><a href="#" class="hover:text-white">Emergency Plumbing</a></li>
+                    <h4 class="font-heading text-lg font-bold text-white mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-trustvolt-yellow transition">Residential Electrical</a></li>
+                        <li><a href="#" class="hover:text-trustvolt-yellow transition">Commercial Electrical</a></li>
+                        <li><a href="#" class="hover:text-trustvolt-yellow transition">Emergency Services</a></li>
+                        <li><a href="#" class="hover:text-trustvolt-yellow transition">EV Charger Installation</a></li>
+                        <li><a href="#" class="hover:text-trustvolt-yellow transition">Smart Home Setup</a></li>
                     </ul>
                 </div>
                 
                 <div>
-                    <h3 class="font-bold text-lg mb-4">Company</h3>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="#" class="hover:text-white">About Us</a></li>
-                        <li><a href="#" class="hover:text-white">Care Plans</a></li>
-                        <li><a href="#" class="hover:text-white">Testimonials</a></li>
-                        <li><a href="#" class="hover:text-white">Service Areas</a></li>
-                        <li><a href="#" class="hover:text-white">Careers</a></li>
+                    <h4 class="font-heading text-lg font-bold text-white mb-4">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-trustvolt-yellow transition">About Us</a></li>
+                        <li><a href="#" class="hover:text-trustvolt-yellow transition">Testimonials</a></li>
+                        <li><a href="#" class="hover:text-trustvolt-yellow transition">Blog</a></li>
+                        <li><a href="#" class="hover:text-trustvolt-yellow transition">Careers</a></li>
+                        <li><a href="#" class="hover:text-trustvolt-yellow transition">Contact</a></li>
                     </ul>
                 </div>
                 
                 <div>
-                    <h3 class="font-bold text-lg mb-4">Contact</h3>
-                    <ul class="space-y-2 text-gray-400">
-                        <li class="flex items-start">
-                            <i class="fas fa-phone-alt text-secondary mt-1 mr-2"></i>
-                            <a href="tel:+447890123456" class="hover:text-white">+44 7890 123456</a>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-envelope text-secondary mt-1 mr-2"></i>
-                            <a href="mailto:info@aquaproplumbers.co.uk" class="hover:text-white">info@aquaproplumbers.co.uk</a>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-map-marker-alt text-secondary mt-1 mr-2"></i>
-                            <span>123 Waterway Road, London, SE1 8TP</span>
-                        </li>
+                    <h4 class="font-heading text-lg font-bold text-white mb-4">Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-trustvolt-yellow transition">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-trustvolt-yellow transition">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-trustvolt-yellow transition">Cookie Policy</a></li>
+                        <li><a href="#" class="hover:text-trustvolt-yellow transition">Guarantees</a></li>
+                        <li><a href="#" class="hover:text-trustvolt-yellow transition">Insurance</a></li>
                     </ul>
                 </div>
             </div>
             
-            <div class="pt-8 border-t border-gray-800">
-                <div class="flex flex-col md:flex-row justify-between items-center">
-                    <p class="text-gray-400 mb-4 md:mb-0">© 2023 AquaPro Plumbers. All rights reserved.</p>
-                    <div class="flex space-x-6">
-                        <a href="#" class="text-gray-400 hover:text-white text-sm">Privacy Policy</a>
-                        <a href="#" class="text-gray-400 hover:text-white text-sm">Terms of Service</a>
-                        <a href="#" class="text-gray-400 hover:text-white text-sm">Cookies</a>
-                    </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <i class="fas fa-lock text-trustvolt-yellow mr-1"></i> <span>100% Secure Booking</span>
+                </div>
+                <div class="text-sm">
+                    &copy; 2023 TrustVolt Electric. All rights reserved. NICEIC Certification No: NICEIC12345
                 </div>
             </div>
         </div>
     </footer>
-    
+
     <!-- Exit Intent Popup -->
-    <div id="exit-popup" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
-        <div class="bg-white rounded-lg max-w-md w-full p-6 relative">
-            <button id="close-exit-popup" class="absolute top-4 right-4 text-gray-500 hover:text-dark">
+    <div id="exit-popup" class="hidden fixed inset-0 bg-black bg-opacity-70 z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-lg shadow-xl max-w-md w-full p-6 relative">
+            <button id="close-popup" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700">
                 <i class="fas fa-times"></i>
             </button>
-            <div class="text-center mb-4">
-                <div class="bg-accent text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-3">
-                    <i class="fas fa-percentage text-2xl"></i>
-                </div>
-                <h3 class="text-2xl font-bold text-primary mb-2">Hold on—claim your 10% off now!</h3>
-                <p class="text-gray-600">Enter your email & postcode to receive an exclusive discount on your first service.</p>
+            <div class="text-center">
+                <i class="fas fa-bolt text-trustvolt-yellow text-4xl mb-4"></i>
+                <h3 class="font-heading text-2xl font-bold mb-2">Wait—Get 5% Off When You Book Today!</h3>
+                <p class="text-gray-600 mb-6">Enter your email below to receive your exclusive discount code.</p>
+                <form class="space-y-4">
+                    <input type="email" placeholder="Your Email Address" class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-trustvolt-yellow">
+                    <button type="submit" class="w-full bg-trustvolt-yellow hover:bg-yellow-500 text-trustvolt-dark font-bold py-3 px-6 rounded transition">
+                        Get My Discount
+                    </button>
+                </form>
             </div>
-            <form class="space-y-3">
-                <div>
-                    <input type="email" placeholder="Email Address" class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-secondary">
-                </div>
-                <div>
-                    <input type="text" placeholder="Postcode" class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-secondary">
-                </div>
-                <button type="submit" class="w-full bg-secondary hover:bg-opacity-90 text-white font-bold py-3 rounded-lg">
-                    Claim My 10% Off <i class="fas fa-arrow-right ml-2"></i>
-                </button>
-            </form>
-            <p class="text-xs text-gray-500 mt-3">*Discount applies to first job only. Minimum £100 spend.</p>
         </div>
     </div>
-    
+
     <script>
-        // Mobile Menu Toggle
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
         });
+
+        // Service tabs
+        const tabButtons = document.querySelectorAll('.service-tab-btn');
+        const tabContents = document.querySelectorAll('.service-tab-content');
         
-        // Discount Modal
-        const discountBtn = document.getElementById('discount-btn');
-        const discountModal = document.getElementById('discount-modal');
-        const closeModal = document.getElementById('close-modal');
-        
-        discountBtn.addEventListener('click', () => {
-            discountModal.classList.remove('hidden');
-        });
-        
-        closeModal.addEventListener('click', () => {
-            discountModal.classList.add('hidden');
-        });
-        
-        // Testimonial Carousel
-        let currentTestimonial = 0;
-        const testimonials = document.querySelectorAll('#testimonial-carousel > div');
-        const prevTestimonialBtn = document.getElementById('prev-testimonial');
-        const nextTestimonialBtn = document.getElementById('next-testimonial');
-        
-        function showTestimonial(index) {
-            testimonials.forEach((testimonial, i) => {
-                testimonial.style.display = i === index ? 'block' : 'none';
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons and contents
+                tabButtons.forEach(btn => btn.classList.remove('active', 'bg-trustvolt-blue', 'text-white'));
+                tabButtons.forEach(btn => btn.classList.add('bg-gray-200', 'text-trustvolt-dark'));
+                tabContents.forEach(content => content.classList.add('hidden'));
+                
+                // Add active class to clicked button
+                button.classList.remove('bg-gray-200', 'text-trustvolt-dark');
+                button.classList.add('active', 'bg-trustvolt-blue', 'text-white');
+                
+                // Show corresponding content
+                const tabId = button.getAttribute('data-tab');
+                document.getElementById(tabId).classList.remove('hidden');
             });
-        }
-        
-        prevTestimonialBtn.addEventListener('click', () => {
-            currentTestimonial = (currentTestimonial - 1 + testimonials.length) % testimonials.length;
-            showTestimonial(currentTestimonial);
         });
-        
-        nextTestimonialBtn.addEventListener('click', () => {
-            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
-            showTestimonial(currentTestimonial);
-        });
-        
-        // Initialize first testimonial
-        showTestimonial(currentTestimonial);
-        
-        // Chat Widget
-        const chatWidget = document.getElementById('chat-widget');
-        const openChatBtn = document.getElementById('open-chat');
-        const closeChatBtn = document.getElementById('close-chat');
-        
-        openChatBtn.addEventListener('click', () => {
-            chatWidget.classList.add('active');
-        });
-        
-        closeChatBtn.addEventListener('click', () => {
-            chatWidget.classList.remove('active');
-        });
-        
-        // Show chat widget on scroll
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 500 && !chatWidget.classList.contains('active')) {
-                setTimeout(() => {
-                    chatWidget.classList.add('active');
-                }, 3000);
-            }
-        });
-        
-        // Countdown Timer
-        function updateCountdown() {
-            const now = new Date();
-            const midnight = new Date();
-            midnight.setHours(24, 0, 0, 0);
+
+        // Exit intent popup
+        let mouseY = 0;
+        document.addEventListener('mousemove', function(e) {
+            mouseY = e.clientY;
             
-           
+            if (mouseY < 50)
 </body>
 </html>
