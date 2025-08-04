@@ -85,7 +85,8 @@
                 <a href="#services" class="hover:text-trustvolt-yellow transition">Services</a>
                 <a href="#about" class="hover:text-trustvolt-yellow transition">About</a>
                 <a href="#testimonials" class="hover:text-trustvolt-yellow transition">Testimonials</a>
-                <a href="#contact" class="hover:text-trustvolt-yellow transition">Contact</a>
+                <a href="#blog" class="hover:text-trustvolt-yellow transition">Blog</a>
+                <a href="#careers" class="hover:text-trustvolt-yellow transition">Careers</a>
             </div>
             <div class="md:hidden">
                 <button id="mobile-menu-button" class="text-white focus:outline-none">
@@ -648,6 +649,9 @@
                 </div>
                 
                 <div class="lg:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1603302576837-37586b474f28?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                         alt="Electrician at work" 
+                         class="rounded-lg shadow-lg w-full h-auto">
                     <div class="bg-gray-100 p-6 rounded-lg">
                         <div class="aspect-w-16 aspect-h-9 mb-6">
                             <img src="https://images.unsplash.com/photo-1605152276897-4f618f831968?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="TrustVolt electrician at work" class="rounded-lg shadow-lg w-full">
@@ -793,84 +797,6 @@
         </div>
     </section>
 
-    <!-- Accreditation Section -->
-    <section class="py-12 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-8">
-                <h3 class="font-heading text-2xl font-bold mb-2">Our Accreditations</h3>
-                <p class="text-gray-600">Quality and safety are our top priorities</p>
-            </div>
-            
-            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16">
-                <img src="https://www.niceic.com/images/default-source/default-album/niceic-logo.png" alt="NICEIC Certified" class="h-12 md:h-16 opacity-80 hover:opacity-100 transition">
-                <img src="https://www.trustmark.org.uk/wp-content/uploads/2021/03/TrustMark-logo-RGB.png" alt="TrustMark Accredited" class="h-12 md:h-16 opacity-80 hover:opacity-100 transition">
-                <img src="https://www.cityandguilds.com/-/media/project/city-and-guilds/rebrand-refresh/logo/city-and-guilds-logo.svg" alt="City & Guilds" class="h-12 md:h-16 opacity-80 hover:opacity-100 transition">
-                <img src="https://www.electricalsafetyfirst.org.uk/media/2183/esc-logo.png" alt="Electrical Safety Certified" class="h-12 md:h-16 opacity-80 hover:opacity-100 transition">
-            </div>
-            
-            <div class="mt-12 text-center">
-                <div class="inline-flex items-center bg-gray-100 px-6 py-4 rounded-lg">
-                    <i class="fas fa-shield-alt text-trustvolt-blue text-2xl mr-4"></i>
-                    <div class="text-left">
-                        <div class="font-heading font-bold">12-Month Workmanship Guarantee</div>
-                        <div class="text-sm text-gray-600">All our work comes with a full guarantee for your peace of mind</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Blog Section -->
-    <section class="py-16 bg-gray-100">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="font-heading text-3xl md:text-4xl font-bold mb-4">Electrical Tips & Resources</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">Learn more about electrical safety, energy efficiency, and smart home technology.</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Blog Post 1 -->
-                <div class="bg-white rounded-lg overflow-hidden shadow hover-lift">
-                    <img src="https://images.unsplash.com/photo-1605106702734-205df224ecce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Emergency electrical issues" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="font-heading text-xl font-bold mb-3">5 Emergency Electrical Issues You Should Never Ignore</h3>
-                        <p class="text-gray-600 mb-4">Learn which electrical problems require immediate attention to prevent fires, shocks, or costly damage to your home's electrical system.</p>
-                        <a href="#" class="text-trustvolt-blue font-bold hover:underline flex items-center">
-                            Read More <i class="fas fa-arrow-right ml-2"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Blog Post 2 -->
-                <div class="bg-white rounded-lg overflow-hidden shadow hover-lift">
-                    <img src="https://images.unsplash.com/photo-1485125639709-a60c3a500bf1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Energy saving tips" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="font-heading text-xl font-bold mb-3">How to Slash Your Energy Bills with Simple Upgrades</h3>
-                        <p class="text-gray-600 mb-4">Discover the most effective electrical upgrades that can significantly reduce your energy consumption and lower your monthly bills.</p>
-                        <a href="#" class="text-trustvolt-blue font-bold hover:underline flex items-center">
-                            Read More <i class="fas fa-arrow-right ml-2"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Blog Post 3 -->
-                <div class="bg-white rounded-lg overflow-hidden shadow hover-lift">
-                    <img src="https://images.unsplash.com/photo-1558002038-1055897befb1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Smart home wiring" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="font-heading text-xl font-bold mb-3">Smart Home Tips: Wiring Your Home for the Future</h3>
-                        <p class="text-gray-600 mb-4">Future-proof your home with these essential wiring considerations for smart lighting, security systems, and home automation.</p>
-                        <a href="#" class="text-trustvolt-blue font-bold hover:underline flex items-center">
-                            Read More <i class="fas fa-arrow-right ml-2"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="text-center mt-12">
-            </div>
-        </div>
-    </section>
-
     <!-- Contact Section -->
     <section id="contact" class="py-16 bg-trustvolt-dark text-white">
         <div class="container mx-auto px-4">
@@ -881,46 +807,6 @@
             
             <div class="flex flex-col lg:flex-row gap-12">
                 <div class="lg:w-1/2">
-                    <form class="space-y-6">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div>
-                                <label for="name" class="block mb-2">Your Name</label>
-                                <input type="text" id="name" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-trustvolt-yellow">
-                            </div>
-                            <div>
-                                <label for="email" class="block mb-2">Email Address</label>
-                                <input type="email" id="email" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-trustvolt-yellow">
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div>
-                                <label for="phone" class="block mb-2">Phone Number</label>
-                                <input type="tel" id="phone" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-trustvolt-yellow">
-                            </div>
-                            <div>
-                                <label for="postcode" class="block mb-2">Postcode</label>
-                                <input type="text" id="postcode" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-trustvolt-yellow">
-                            </div>
-                        </div>
-                        <div>
-                            <label for="service" class="block mb-2">Service Needed</label>
-                            <select id="service" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-trustvolt-yellow">
-                                <option value="">Select a service</option>
-                                <option>Emergency Electrical</option>
-                                <option>Residential Wiring</option>
-                                <option>Commercial Electrical</option>
-                                <option>EV Charger Installation</option>
-                                <option>Other</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label for="message" class="block mb-2">Message</label>
-                            <textarea id="message" rows="4" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-trustvolt-yellow"></textarea>
-                        </div>
-                        <button type="submit" class="w-full bg-trustvolt-yellow hover:bg-yellow-500 text-trustvolt-dark font-bold py-3 px-6 rounded transition">
-                            Send Message
-                        </button>
-                    </form>
                 </div>
                 
                 <div class="lg:w-1/2">
@@ -1000,22 +886,6 @@
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d158858.182370726!2d-0.10159865000000001!3d51.52864165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a00baf21de75%3A0x52963a5addd52a99!2sLondon!5e0!3m2!1sen!2suk!4v1686754300156!5m2!1sen!2suk" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
 
-    <!-- Sticky Contact Bar -->
-    <div class="sticky-contact-bar bg-trustvolt-dark text-white py-3 px-4 shadow-lg">
-        <div class="container mx-auto flex flex-wrap items-center justify-between">
-            <div class="flex items-center">
-                <a href="tel:+441234567890" class="flex items-center mr-4 hover:text-trustvolt-yellow transition">
-                    <i class="fas fa-phone mr-2"></i> +44 07983699865
-                </a>
-                <a href="mailto:info@trustvoltelectric.co.uk" class="flex items-center hover:text-trustvolt-yellow transition">
-                    <i class="fas fa-envelope mr-2"></i> trustvoltelectric.co.uk
-                </a>
-            </div>
-            <a href="#quote-form" class="bg-trustvolt-yellow hover:bg-yellow-500 text-trustvolt-dark font-bold py-2 px-4 rounded transition">
-                <i class="fas fa-bolt mr-1"></i> Get a Quote
-            </a>
-        </div>
-    </div>
 
     <!-- Footer -->
     <footer class="bg-gray-900 text-gray-400 py-12">
@@ -1085,25 +955,6 @@
         </div>
     </footer>
 
-    <!-- Exit Intent Popup -->
-    <div id="exit-popup" class="hidden fixed inset-0 bg-black bg-opacity-70 z-50 flex items-center justify-center p-4">
-        <div class="bg-white rounded-lg shadow-xl max-w-md w-full p-6 relative">
-            <button id="close-popup" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700">
-                <i class="fas fa-times"></i>
-            </button>
-            <div class="text-center">
-                <i class="fas fa-bolt text-trustvolt-yellow text-4xl mb-4"></i>
-                <h3 class="font-heading text-2xl font-bold mb-2">Wait—Get 5% Off When You Book Today!</h3>
-                <p class="text-gray-600 mb-6">Enter your email below to receive your exclusive discount code.</p>
-                <form class="space-y-4">
-                    <input type="email" placeholder="Your Email Address" class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-trustvolt-yellow">
-                    <button type="submit" class="w-full bg-trustvolt-yellow hover:bg-yellow-500 text-trustvolt-dark font-bold py-3 px-6 rounded transition">
-                        Get My Discount
-                    </button>
-                </form>
-            </div>
-        </div>
-    </div>
 
     <script>
         // Mobile menu toggle
